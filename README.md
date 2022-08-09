@@ -167,6 +167,19 @@ TODO
 	- openmonero
 	- private-testnet
 	- transactions-report
+* moneroguides
+	- 0x01-Mining-Monero-with-P2Pool-Windows-Quick-start-guide
+	- 1x01-importing-public-keys-and-verifying-hashes
+	- 1x02-setting-up-your-own-node
+	- moneroguides-assets
+	- getmonero.org
+	- 2x01-an-introduction-to-mining
+	- 2x02-setting-up-your-rig
+	- 0x02-turning-your-node-into-a-service
+	- 1x03-using-moneo-as-money
+	- 0x03-Mining-Monero-P2Pool-quick-start-guide
+	- moneroguides.org
+	- 1x04-using-monero-with-enhanced-privacy
 * monero-integrations
 	- monerowhmcs
 	- moneroodoo
@@ -187,6 +200,10 @@ TODO
 	- monero-site
 	- monero-update
 	- monero-wallet-generator
+* moneropay
+	- moneropay
+	- moneropay-docs
+	- go-monero
 * monero-project
 	- monero
 	- monero-gui
@@ -465,6 +482,7 @@ WIP
 - https://www.youtube.com/c/MoneroCommunityWorkgroup
 - https://www.youtube.com/c/SweetwaterDAC
 - https://www.youtube.com/channel/UCnjUpT9gGxyQ_lud7uKoTCg
+- moneroguides
 
 ## Books
 WIP
