@@ -120,6 +120,9 @@ TODO
 	- bitmonero
 * luigi1111
 	- xmr.llcoins.net
+* MAGICGrants
+	- website
+	- Monero-Fund
 * m2049r
 	- xmrwallet
 	- monero
@@ -284,6 +287,10 @@ TODO
 	- monero-core
 * rottenstonks
 	- revuo-weekly
+* SamsungGalaxyPlayer
+	- monero-presentations
+	- konferenco-2020
+	- monero-meetup-kit
 * SarangNoether
 	- monero
 	- monero-site
