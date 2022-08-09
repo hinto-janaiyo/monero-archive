@@ -97,7 +97,7 @@ Inside that folder you'll find `github`, `youtube`, `libera_logs` or all 3, depe
 	- from0k2bp
 	- monero
 	- moneriote
-* haveno
+* haveno-dex
 	- haveno-site
 	- haveno
 	- haveno-ts
