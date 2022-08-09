@@ -18,9 +18,9 @@ TODO
 * create torrent
 	- sign+hash afterwards
 
-## Contents
+## Help
 * [Build](#Build)
-	- [Configuration](#Configuration)
+* [Configuration](#Configuration)
 * [Requirements](#Requirements)
 * [Warnings](#Warnings)
 ## Content List
@@ -37,11 +37,9 @@ To build an archive:
 3. Run the appropriate script, for example if you want all GitHub repos: `./github.sh`
 
 A folder within `build/` will be created named something like `monero-archive-a18f610`. This reflects the current git commit you're on.
-Inside that folder you'll find `github`, `youtube`, `libera_logs` or all 3, depending on what you built.
+Inside that folder you'll find `github`, `youtube`, `libera_logs` or all 3, depending on what you built. Repos/channel folders already found will be skipped.
 
-Repos/channel folders already found will be skipped.
-
-### Configuration
+## Configuration
 **This `README.md` itself is the configuration file for the scripts.**
 
 To NOT scrape certain GitHub authors/repos, Youtube channels, or Libera channels, simply remove the entire from the `README.md` before running the script. No empty line can be left behind, make sure you delete the whole line.
@@ -49,9 +47,10 @@ To NOT scrape certain GitHub authors/repos, Youtube channels, or Libera channels
 To add your own GitHub authors/repos, please follow this syntax:
 ```
 * AUTHOR
-	- REPO
-	- ANOTHER_REPO
-* ANOTHER_AUTHOR
+    - REPO
+* AUTHOR
+    - REPO
+    - REPO
 ```
 To add Youtube channels:
 ```
@@ -61,7 +60,7 @@ At the end of every list (GitHub, etc) there must be an empty line:
 ```
 ## LIST
 * AUTHOR
-	- REPO
+    - REPO
                     <-- this empty line needs to be here
 ## LIST
 * CHANNEL
