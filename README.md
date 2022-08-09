@@ -44,7 +44,7 @@ Inside that folder you'll find `github`, `youtube`, `libera_logs` or all 3, depe
 ## Content List
 * [GitHub](#GitHub)
 * [Youtube](#Youtube)
-* [Libera Logs](#Libera Logs)
+* [Libera Logs](#Libera-Logs)
 * [PGP Keys](#PGP-Keys)
 * [Extra](#Extra)
 
@@ -443,17 +443,17 @@ These are all the GitHub repos that will be cloned:
 	- monero-supply
 
 ## Libera Logs
-The logs start at these dates:
-- #monero [`https://libera.monerologs.net/monero/20210608`](https://libera.monerologs.net/monero/20210608)
-- #monero-community [`https://libera.monerologs.net/monero-community/20210609`](https://libera.monerologs.net/monero-community/20210609)
-- #monero-dev [`https://libera.monerologs.net/monero-dev/20210608`](https://libera.monerologs.net/monero-dev/20210608)
-- #monero-gui [`https://libera.monerologs.net/monero-gui/20210610`](https://libera.monerologs.net/monero-gui/20210610)
-- #monero-pow [`https://libera.monerologs.net/monero-pow/20210608`](https://libera.monerologs.net/monero-pow/20210608)
-- #monero-research-lab [`https://libera.monerologs.net/monero-research-lab/20210609`](https://libera.monerologs.net/monero-research-lab/20210609)
-- #monero-site [`https://libera.monerologs.net/monero-site/20210615`](https://libera.monerologs.net/monero-site/20210615)
+The channels that will scraped:
+- #monero [`https://libera.monerologs.net/monero`](https://libera.monerologs.net/monero)
+- #monero-community [`https://libera.monerologs.net/monero-community`](https://libera.monerologs.net/monero-community)
+- #monero-dev [`https://libera.monerologs.net/monero-dev`](https://libera.monerologs.net/monero-dev)
+- #monero-gui [`https://libera.monerologs.net/monero-gui`](https://libera.monerologs.net/monero-gui)
+- #monero-pow [`https://libera.monerologs.net/monero-pow`](https://libera.monerologs.net/monero-pow)
+- #monero-research-lab [`https://libera.monerologs.net/monero-research-lab`](https://libera.monerologs.net/monero-research-lab)
+- #monero-site [`https://libera.monerologs.net/monero-site`](https://libera.monerologs.net/monero-site)
 
 ## Youtube
-These channels will be scraped:
+The list of Youtube channels that will be scraped:
 - Monero Talk [`https://www.youtube.com/c/MoneroTalk`](https://www.youtube.com/c/MoneroTalk)
 - Monero Space [`https://www.youtube.com/c/MoneroSpaceWorkgroup`](https://www.youtube.com/c/MoneroSpaceWorkgroup)
 - Monero Community Workgroup [`https://www.youtube.com/c/MoneroCommunityWorkgroup`](https://www.youtube.com/c/MoneroCommunityWorkgroup)
