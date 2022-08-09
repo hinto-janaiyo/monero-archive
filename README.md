@@ -5,7 +5,7 @@ Scripts for scraping sites hosted by individual community members are not create
 
 **Other than PGP keys, there is no content in this repo, only scripts to speed up the process of obtaining it.**
 
-**Copyright of the content's original creator(s)/contributor(s) apply.**
+**Copyright of the content's original creator(s) & contributor(s) apply.**
 
 If you'd like something added/removed from the list, please contact me: `hinto.janaiyo@protonmail.com`
 
@@ -37,7 +37,7 @@ Inside that folder you'll find `github`, `youtube`, `libera_logs` or all 3, depe
 ## Warnings
 1. `github.sh` will RECURSIVELY clone repos. This means the **entire** history of the Git tree will be cloned along with any submodules.
 2. `youtube.sh` may get your IP temporarily banned from Youtube.
-3. `libera_logs.sh` sources from [`https://libera.monerologs.net`](https://libera.monerologs.net) which I'm not sure who operates so be gentle :D
+3. `libera_logs.sh` will download the **entire** history of **all** channels. Empty logs will be removed. It sources from [`https://libera.monerologs.net`](https://libera.monerologs.net) which I'm not sure who operates so be gentle :D
 
 ## Content List
 * [GitHub](#GitHub)
@@ -439,6 +439,23 @@ Inside that folder you'll find `github`, `youtube`, `libera_logs` or all 3, depe
 * xrv0
 	- monero-supply
 
+## Libera Logs
+- #monero [`https://libera.monerologs.net/monero/20210608`](https://libera.monerologs.net/monero/20210608)
+- #monero-community [`https://libera.monerologs.net/monero-community/20210609`](https://libera.monerologs.net/monero-community/20210609)
+- #monero-dev [`https://libera.monerologs.net/monero-dev/20210608`](https://libera.monerologs.net/monero-dev/20210608)
+- #monero-gui [`https://libera.monerologs.net/monero-gui/20210610`](https://libera.monerologs.net/monero-gui/20210610)
+- #monero-pow [`https://libera.monerologs.net/monero-pow/20210608`](https://libera.monerologs.net/monero-pow/20210608)
+- #monero-research-lab [`https://libera.monerologs.net/monero-research-lab/20210609`](https://libera.monerologs.net/monero-research-lab/20210609)
+- #monero-site [`https://libera.monerologs.net/monero-site/20210615`](https://libera.monerologs.net/monero-site/20210615)
+
+## Youtube
+- Monero Talk [`https://www.youtube.com/c/MoneroTalk`](https://www.youtube.com/c/MoneroTalk)
+- Monero Space [`https://www.youtube.com/c/MoneroSpaceWorkgroup`](https://www.youtube.com/c/MoneroSpaceWorkgroup)
+- Monero Community Workgroup [`https://www.youtube.com/c/MoneroCommunityWorkgroup`](https://www.youtube.com/c/MoneroCommunityWorkgroup)
+- Sweetwater Digital Asset Consulting [`https://www.youtube.com/c/SweetwaterDAC`](https://www.youtube.com/c/SweetwaterDAC)
+- Monero [`https://www.youtube.com/channel/UCnjUpT9gGxyQ_lud7uKoTCg`](https://www.youtube.com/channel/UCnjUpT9gGxyQ_lud7uKoTCg)
+- Monero Guides [`https://www.youtube.com/c/MoneroGuides`](https://www.youtube.com/c/MoneroGuides)
+
 ## PGP Keys
 PGP keys are already collected and found in this repo in `pgp/`.
 
@@ -503,14 +520,6 @@ Any other keys are found in the individual's GitHub or website.
 * wowario `61E3EA3F7D2A6C2796F189FA24DCBE762DE9C111`
 * xiphon `8F77964DBBA324198D78A603BD72EC6C3F187C67`
 * xmrig `9AC4CEA8E66E35A5C7CDDC1B446A53638BE94409`
-
-## Youtube
-- Monero Talk [`https://www.youtube.com/c/MoneroTalk`](https://www.youtube.com/c/MoneroTalk)
-- Monero Space [`https://www.youtube.com/c/MoneroSpaceWorkgroup`](https://www.youtube.com/c/MoneroSpaceWorkgroup)
-- Monero Community Workgroup [`https://www.youtube.com/c/MoneroCommunityWorkgroup`](https://www.youtube.com/c/MoneroCommunityWorkgroup)
-- Sweetwater Digital Asset Consulting [`https://www.youtube.com/c/SweetwaterDAC`](https://www.youtube.com/c/SweetwaterDAC)
-- Monero [`https://www.youtube.com/channel/UCnjUpT9gGxyQ_lud7uKoTCg`](https://www.youtube.com/channel/UCnjUpT9gGxyQ_lud7uKoTCg)
-- Monero Guides [`https://www.youtube.com/c/MoneroGuides`](https://www.youtube.com/c/MoneroGuides)
 
 ## Extra
 WIP
