@@ -49,6 +49,12 @@ BUILD_DIRECTORY="$PWD/monero-archive-${BUILD_UUID}/github"
 mkdir -p "$BUILD_DIRECTORY"
 cd "$BUILD_DIRECTORY"
 
+# Begin
+printf "\e[1;92m[monero-archive] \e[1;97m%s\e[0m\n" "starting build in: $BUILD_DIRECTORY"
+
+
+
+
 # Loop over list
 IFS=$'\n'
 for i in $LIST; do
@@ -64,14 +70,14 @@ for i in $LIST; do
 		REPO="${i/[[:blank:]]- }"
 		# If a directory is found, skip it
 		if [[ -d "$BUILD_DIRECTORY/$AUTHOR/$REPO" ]]; then
-			printf "\e[1;93m%s\e[0m%s\n" "[REPO FOUND, SKIPPING ${NUM_NOW}/${NUM_MAX}] " "$AUTHOR/$REPO"
+			printf "\e[1;93m%s\e[0m%s\n" "[REPO FOUND, SKIPPING ${NUM_NOW}/${NUM_MAX}] " "monero-archive-${BUILD_UUID}/github/$AUTHOR/$REPO"
 			((NUM_NOW++))
 			continue
 		fi
 		# Clone into $AUTHOR
 		# Ask if user would like to continue
 		# if git clone fails.
-		printf "\e[1;92m[CLONING \e[1;93m${NUM_NOW}\e[1;92m/\e[1;95m${NUM_MAX}\e[1;92m] \e[1;97m%s\e[0m\n" "$AUTHOR | $REPO"
+		printf "\e[1;92m[CLONING \e[1;93m${NUM_NOW}\e[1;92m/\e[1;95m${NUM_MAX}\e[1;92m] \e[1;97m%s\e[0m\n" "monero-archive-${BUILD_UUID}/github/$AUTHOR/$REPO"
 		until git clone --recursive "https://github.com/$AUTHOR/$REPO"; do
 			# Remove if failed
 			rm -rf "$BUILD_DIRECTORY/$AUTHOR/$REPO"

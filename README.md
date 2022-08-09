@@ -34,7 +34,7 @@ Repos/channel folders already found will be skipped.
 ### Configuration
 **This `README.md` itself is the configuration file for the scripts.**
 
-To NOT scrape certain GitHub authors/repos, Youtube channels, or Libera channels, simply remove it from the `README.md` before running the script.
+To NOT scrape certain GitHub authors/repos, Youtube channels, or Libera channels, simply remove the entire from the `README.md` before running the script. No empty line can be left behind, make sure you delete the whole line.
 
 To add your own GitHub authors/repos, please follow this syntax:
 ```
@@ -46,6 +46,15 @@ To add your own GitHub authors/repos, please follow this syntax:
 To add Youtube channels:
 ```
 * https://youtube.com/c/YOUTUBE_CHANNEL
+```
+At the end of every list (## GitHub, etc) there must be an empty line:
+```
+## GitHub
+* AUTHOR
+	- REPO
+                    <-- this empty line needs to be here
+## Youtube
+* CHANNEL
 ```
 
 ## Requirements
@@ -177,6 +186,9 @@ To add Youtube channels:
 * mj-xmr
 	- SolOptXMR
 	- monero-mj
+* monerobook
+	- monerobook
+	- code
 * monerica-project
 	- monerica
 * monerodocs
@@ -364,7 +376,6 @@ To add Youtube channels:
 	- exploremonero-i18n
 	- getmonero.dev
 	- monero-lws
-	- monerobook
 * sethforprivacy
 	- simple-monerod-docker
 	- p2pool-docker

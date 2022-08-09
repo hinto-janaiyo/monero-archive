@@ -38,7 +38,7 @@ fi
 URL="https://libera.monerologs.net"
 
 # Set channels
-CHANNELS="$(sed -n '/## Libera Logs/,/^$/p' ../README.md | sed '/^#.*$/d; /^$/d; s/- //g')"
+CHANNELS="$(sed -n '/## Libera Logs/,/^$/p' ../README.md | sed '/^#.*$/d; /^$/d; s/* //g')"
 
 # Get the date
 DATE_TODAY=$(date +"%Y%m%d")
@@ -87,7 +87,7 @@ for y in {2022..2025}; do
 			[[ $DATE = "$DATE_TODAY" ]] && break 3
 			# If a file is found, skip it
 			if [[ -e "$BUILD_DIRECTORY/$c/$DATE" ]]; then
-				printf "\e[1;93m%s\e[0m%s\n" "[LOG FOUND, SKIPPING] " "$BUILD_DIRECTORY/$c/$DATE"
+				printf "\e[1;93m%s\e[0m%s\n" "[LOG FOUND, SKIPPING] " "$c/$DATE"
 				continue
 			fi
 			if wget -q "$URL/$c/$DATE/raw" -O "$DATE"; then
