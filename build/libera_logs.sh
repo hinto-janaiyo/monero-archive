@@ -54,23 +54,24 @@ for c in ${CHANNEL[@]}; do
 mkdir -p "$c"
 cd "$c"
 
+# BEGINNING OF 2021
+# Loop over months in a year
+y=2021
+for m in {06..12}; do
+	# Loop over days in a month
+	for d in {01..31}; do
+		DATE="${y}${m}${d}"
+		if wget -q "$URL/$CHANNEL/$DATE/raw" -O "$DATE"; then
+			printf "\e[1;92m%s\e[0m%s\n" "[  OK  ] " "$CHANNEL/$DATE"
+		else
+			printf "\e[1;91m%s\e[0m%s\n" "[WGET ERROR] " "$URL/$CHANNEL/$DATE"
+		fi
+	done
+done
+
 # Loop over year
 # MAX 2025... just in case.
-for y in {2021..2025}; do
-	# BEGINNING
-	# Loop over months in a year
-	for m in {06..12}; do
-		# Loop over days in a month
-		for d in {08..31}; do
-			DATE="${y}${m}${d}"
-			if wget -q "$URL/$CHANNEL/$DATE/raw" -O "$DATE"; then
-				printf "\e[1;92m%s\e[0m%s\n" "[  OK  ] " "$CHANNEL/$DATE"
-			else
-				printf "\e[1;91m%s\e[0m%s\n" "[WGET ERROR] " "$URL/$CHANNEL/$DATE"
-			fi
-		done
-	done
-
+for y in {2022..2025}; do
 	# EVERYTHING AFTER
 	# Loop over months in a year
 	for m in {01..12}; do

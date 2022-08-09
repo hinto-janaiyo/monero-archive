@@ -21,7 +21,8 @@ TODO
 	- sign+hash afterwards
 
 ## Build
-1. To build an archive, first clone this repo: `git clone https://github.com/hinto-janaiyo/monero-archive`
+To build an archive:
+1. Clone this repo: `git clone https://github.com/hinto-janaiyo/monero-archive`
 2. Goto the `build` directory: `cd monero-archive/build`
 3. Run the appropriate script, for example if you want all GitHub repos: `./github.sh`
 
@@ -38,7 +39,7 @@ Inside that folder you'll find `github`, `youtube`, `libera_logs` or all 3, depe
 ## Warnings
 1. `github.sh` will RECURSIVELY clone repos. This means the **entire** history of the Git tree will be cloned along with any submodules.
 2. `youtube.sh` may get your IP temporarily banned from Youtube.
-3. `libera_logs.sh` will download the **entire** history of **all** channels. Empty logs will be removed. It sources from [`https://libera.monerologs.net`](https://libera.monerologs.net) which I'm not sure who operates so be gentle :D
+3. `libera_logs.sh` will download the **entire** history of **all** channels. It sources from [`https://libera.monerologs.net`](https://libera.monerologs.net) which I'm not sure who operates so be gentle :D
 
 ## Content List
 * [GitHub](#GitHub)
@@ -48,6 +49,7 @@ Inside that folder you'll find `github`, `youtube`, `libera_logs` or all 3, depe
 * [Extra](#Extra)
 
 ## GitHub
+These are all the GitHub repos that will be cloned:
 * AsBenDoge
 	- p2pool-report
 * busyboredom
@@ -441,6 +443,7 @@ Inside that folder you'll find `github`, `youtube`, `libera_logs` or all 3, depe
 	- monero-supply
 
 ## Libera Logs
+The logs start at these dates:
 - #monero [`https://libera.monerologs.net/monero/20210608`](https://libera.monerologs.net/monero/20210608)
 - #monero-community [`https://libera.monerologs.net/monero-community/20210609`](https://libera.monerologs.net/monero-community/20210609)
 - #monero-dev [`https://libera.monerologs.net/monero-dev/20210608`](https://libera.monerologs.net/monero-dev/20210608)
@@ -450,6 +453,7 @@ Inside that folder you'll find `github`, `youtube`, `libera_logs` or all 3, depe
 - #monero-site [`https://libera.monerologs.net/monero-site/20210615`](https://libera.monerologs.net/monero-site/20210615)
 
 ## Youtube
+These channels will be scraped:
 - Monero Talk [`https://www.youtube.com/c/MoneroTalk`](https://www.youtube.com/c/MoneroTalk)
 - Monero Space [`https://www.youtube.com/c/MoneroSpaceWorkgroup`](https://www.youtube.com/c/MoneroSpaceWorkgroup)
 - Monero Community Workgroup [`https://www.youtube.com/c/MoneroCommunityWorkgroup`](https://www.youtube.com/c/MoneroCommunityWorkgroup)
