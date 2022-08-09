@@ -1,10 +1,8 @@
 # WORK IN PROGRESS - monero-archive
-This is a collection of scripts for archiving Monero related stuff. Requires GNU/Linux.
-
+This is a collection of scripts for archiving Monero related stuff. Requires GNU/Linux.  
 Scripts for scraping sites hosted by individual community members are not created on purpose.
 
-**Other than PGP keys, there is no content in this repo, only scripts to speed up the process of obtaining it.**
-
+**Other than PGP keys, there is no content in this repo, only scripts to speed up the process of obtaining it.**  
 **Copyright of the content's original creator(s) & contributor(s) apply.**
 
 If you'd like something added/removed from the list, please contact me: `hinto.janaiyo@protonmail.com`  
@@ -19,6 +17,18 @@ TODO
 	- all metadata, thumbnails, etc
 * create torrent
 	- sign+hash afterwards
+
+## Contents
+* [Build](#Build)
+	- [Configuration](#Configuration)
+* [Requirements](#Requirements)
+* [Warnings](#Warnings)
+## Content List
+* [GitHub](#GitHub)
+* [Youtube](#Youtube)
+* [Libera Logs](#Libera-Logs)
+* [PGP Keys](#PGP-Keys)
+* [Extra](#Extra)
 
 ## Build
 To build an archive:
@@ -68,13 +78,6 @@ At the end of every list (GitHub, etc) there must be an empty line:
 1. `github.sh` will RECURSIVELY clone repos. This means the entire history of the Git tree will be cloned along with any submodules
 2. `youtube.sh` may get your IP temporarily banned from Youtube
 3. `libera_logs.sh` will download the entire history of channels. It sources from [`https://libera.monerologs.net`](https://libera.monerologs.net) which I'm not sure who operates so be gentle :D
-
-## Content List
-* [GitHub](#GitHub)
-* [Youtube](#Youtube)
-* [Libera Logs](#Libera-Logs)
-* [PGP Keys](#PGP-Keys)
-* [Extra](#Extra)
 
 ## GitHub
 * AsBenDoge
