@@ -1,5 +1,13 @@
 # WIP monero-archive
-This is an archive of Monero related stuff: git trees, keys, media, etc.
+This is collection of scripts for archiving Monero related stuff. Requires GNU/Linux.
+
+Scripts for scraping sites hosted by individual community members are not created on purpose.
+
+**Other than PGP keys, there is no content in this repo, only scripts to speed up the process of obtaining it.**
+
+**Copyright of the content's original creator(s)/contributor(s) apply.**
+
+If you'd like something added/removed from the list, please contact me: `hinto.janaiyo@protonmail.com`
 
 TODO
 * create git clone/pull script
@@ -11,15 +19,31 @@ TODO
 * create torrent
 	- sign+hash afterwards
 
-## Contents
+## Build
+1. To build an archive, first clone this repo: `git clone https://github.com/hinto-janaiyo/monero-archive`
+2. Goto the `build` directory: `cd monero-archive/build`
+3. Run the appropriate script, for example if you want all GitHub repos: `./github.sh`
+
+A folder within `build/` will be created named something like `monero-archive-a18f610`. This reflects the current git commit you're on.
+Inside that folder you'll find `github`, `youtube`, `libera_logs` or all 3, depending on what you built.
+
+## Requirements
+| Script         | Requires             |
+|----------------|----------------------|
+| github.sh      | `git`                |
+| youtube.sh     | `git` & `youtube-dl` |
+| libera_logs.sh | `git` & `wget`       |
+
+## Warnings
+1. `github.sh` will RECURSIVELY clone repos. This means the **entire** history of the Git tree will be cloned along with any submodules.
+2. `youtube.sh` may get your IP temporarily banned from Youtube.
+3. `libera_logs.sh` sources from [`https://libera.monerologs.net`](https://libera.monerologs.net) which I'm not sure who operates so be gentle :D
+
+## Content List
 * [GitHub](#GitHub)
-* [Git](#Git)
+* [Youtube](#Youtube)
+* [Libera Logs](#Libera Logs)
 * [PGP Keys](#PGP-Keys)
-* [Sites](#Sites)
-* [Videos](#Videos)
-* [Books](#Books)
-* [Images](#Images)
-* [Text](#Text)
 * [Extra](#Extra)
 
 ## GitHub
@@ -415,11 +439,9 @@ TODO
 * xrv0
 	- monero-supply
 
-## Git
-* escapethe3RA
-	- ssh://git.monero.observer:23231/src
-
 ## PGP Keys
+PGP keys are already collected and found in this repo in `pgp/`.
+
 Sources:
 * https://github.com/monero-project/monero/tree/master/utils/gpg_keys
 * https://github.com/monero-project/gitian.sigs/tree/master/gitian-pubkeys
@@ -482,31 +504,13 @@ Any other keys are found in the individual's GitHub or website.
 * xiphon `8F77964DBBA324198D78A603BD72EC6C3F187C67`
 * xmrig `9AC4CEA8E66E35A5C7CDDC1B446A53638BE94409`
 
-## Sites
-WIP
-- moneroj.net charts
-
-## Videos
-WIP
-- https://www.youtube.com/c/MoneroSpaceWorkgroup
-- https://www.youtube.com/c/MoneroTalk
-- https://www.youtube.com/c/MoneroCommunityWorkgroup
-- https://www.youtube.com/c/SweetwaterDAC
-- https://www.youtube.com/channel/UCnjUpT9gGxyQ_lud7uKoTCg
-- moneroguides
-
-## Books
-WIP
-- zero to monero
-
-## Images
-WIP
-- gnuteardrops: https://monero.graphics
-
-## Text
-WIP
-- meeting chat logs
-- sethforprivacy
+## Youtube
+- Monero Talk [`https://www.youtube.com/c/MoneroTalk`](https://www.youtube.com/c/MoneroTalk)
+- Monero Space [`https://www.youtube.com/c/MoneroSpaceWorkgroup`](https://www.youtube.com/c/MoneroSpaceWorkgroup)
+- Monero Community Workgroup [`https://www.youtube.com/c/MoneroCommunityWorkgroup`](https://www.youtube.com/c/MoneroCommunityWorkgroup)
+- Sweetwater Digital Asset Consulting [`https://www.youtube.com/c/SweetwaterDAC`](https://www.youtube.com/c/SweetwaterDAC)
+- Monero [`https://www.youtube.com/channel/UCnjUpT9gGxyQ_lud7uKoTCg`](https://www.youtube.com/channel/UCnjUpT9gGxyQ_lud7uKoTCg)
+- Monero Guides [`https://www.youtube.com/c/MoneroGuides`](https://www.youtube.com/c/MoneroGuides)
 
 ## Extra
 WIP

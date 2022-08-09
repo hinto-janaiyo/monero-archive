@@ -46,7 +46,7 @@ NUM_NOW=1
 # Create build directory 'monero-archive-github-$GIT_BRANCH'
 # or 'monero-archive-github-YEAR-MONTH-DAY' if git errors out
 BUILD_UUID=$(git rev-parse --short HEAD 2>/dev/null) || BUILD_DIRECTORY=$(date +"%Y-%m-%d")
-BUILD_DIRECTORY="monero-archive-github-${BUILD_UUID}"
+BUILD_DIRECTORY="monero-archive-${BUILD_UUID}/github"
 mkdir -p "$BUILD_DIRECTORY"
 cd "$BUILD_DIRECTORY"
 
