@@ -45,7 +45,7 @@ NUM_NOW=1
 
 # Create build directory 'monero-archive-github-$GIT_BRANCH'
 BUILD_UUID=$(git rev-parse --short HEAD 2>/dev/null)
-BUILD_DIRECTORY="monero-archive-${BUILD_UUID}/github"
+BUILD_DIRECTORY="$PWD/monero-archive-${BUILD_UUID}/github"
 mkdir -p "$BUILD_DIRECTORY"
 cd "$BUILD_DIRECTORY"
 
@@ -56,7 +56,8 @@ for i in $LIST; do
 	if [[ $i = \** ]]; then
 		AUTHOR="${i/\* }"
 		# Create author directory
-		mkdir -p "$AUTHOR"
+		mkdir -p "${BUILD_DIRECTORY}/$AUTHOR"
+		cd "${BUILD_DIRECTORY}/$AUTHOR"
 		continue
 	# Else, get repo from "-"
 	else
@@ -65,14 +66,14 @@ for i in $LIST; do
 		# Clone into $AUTHOR
 		# Ask if user would like to continue
 		# if git clone fails.
-		if ! git clone --recursive "https://github.com/$AUTHOR/$REPO" "$BUILD_DIRECTORY/$AUTHOR/$REPO"; then
-			printf "\e[1;91m%s\e[0m%s\n" "[GIT CLONE ERROR: https://github.com/$AUTHOR/$REPO] " "Continue anyway? (y/N) "
-			read -r YES_NO
-			case "$YES_NO" in
-				y|Y|yes|Yes|YES) :;;
-				*) exit 1;;
+		until git clone --recursive "https://github.com/$AUTHOR/$REPO"; do
+			printf "\e[1;91m%s\e[0m%s\n" "[GIT CLONE ERROR: https://github.com/$AUTHOR/$REPO] " "What to do? (Retry / skip) "
+			read -r RETRY_SKIP
+			case "$RETRY_SKIP" in
+				retry|Retry|RETRY|' ') :;;
+				*) break 1;;
 			esac
-		fi
+		done
 		# Increment current number
 		((NUM_NOW++))
 	fi

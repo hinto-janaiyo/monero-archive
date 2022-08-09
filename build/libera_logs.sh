@@ -45,7 +45,7 @@ DATE_TODAY=$(date +"%Y%m%d")
 
 # Create build directory 'monero-archive-$GIT_BRANCH'
 BUILD_UUID=$(git rev-parse --short HEAD 2>/dev/null)
-BUILD_DIRECTORY="monero-archive-${BUILD_UUID}/libera_logs"
+BUILD_DIRECTORY="$PWD/monero-archive-${BUILD_UUID}/libera_logs"
 mkdir -p "$BUILD_DIRECTORY"
 cd "$BUILD_DIRECTORY"
 
