@@ -1,0 +1,398 @@
+# monero-archive
+WIP
+
+This is an archive of Monero related stuff: git trees, media, websites, etc.
+
+TODO
+* create git clone/pull script
+* (github pr/issue scrape script?)
+* create media scrape script
+* create torrent
+
+## Contents
+* [GitHub](#GitHub)
+* [Git](#Git)
+* [Sites](#Sites)
+* [Videos](#Videos)
+* [Books](#Books)
+* [Images](#Images)
+
+## GitHub
+* AsBenDoge
+	- p2pool-report
+* cake-tech
+	- cake_wallet
+	- monero
+	- monerocom-charts
+* cirocosta
+	- go-monero
+	- monero-exporter
+* comit-network
+	- xmr-btc-swap
+	- rendezvous-server
+	- maia
+	- malax
+	- comit.network
+	- xtra-productivity
+	- monero-rs
+	- monero
+* CryptoGrampy
+	- HotShop
+	- android-termux-monero-node
+* dalek-cryptography
+	- bulletproofs
+* erciccione
+	- haveno-site
+	- monero-site
+	- haveno
+* farcaster-project
+	- farcaster-node
+	- farcaster-core
+	- workflows
+	- parallel-offer-taker
+	- containers
+	- client-side-validation
+	- secp256kfun
+	- meetings
+	- RFCs
+* feather-wallet
+	- feather
+	- feather-docs
+* fluffypony
+	- monero
+* Gingeropolous
+	- from0k2bp
+	- monero
+	- moneriote
+* haveno
+	- haveno-site
+	- haveno
+	- haveno-ts
+	- monero
+	- haveno-ui-poc
+	- haveno-ui
+	- haveno-meta
+	- haveno-design
+* hinto-janaiyo
+	- monero-bash
+	- monero-gpg
+	- monero-utils
+* hyahatiph-labs
+	- bitmonero
+	- monero-gui
+	- mass
+	- infosec
+	- hlc
+	- monero-site
+	- hlq
+	- xmrbc-rs
+* hyc
+	- RandomX
+	- RandomxAudits
+* i2p-zero
+	- i2p-zero
+* j-berman
+	- monero
+	- node-cryptonote-util
+	- nodejs-pool
+* jeffro256
+	- monero
+* jtgrassie
+	- monero-pool
+	- monero-powpy
+	- pyrx
+	- monero
+	- xmrpc
+* kayabaNerve
+	- monero
+	- monero-secret-sharing
+	- cryptonote-library
+* LMDB
+	- lmdb
+	- bitmonero
+* luigi1111
+	- xmr.llcoins.net
+* m2049r
+	- xmrwallet
+	- monero
+	- monerujo-site
+	- monerujo-hw
+* mj-xmr
+	- SolOptXMR
+	- monero-mj
+* monerica-project
+	- monerica
+* monerodocs
+	- md
+	- mkdocs-material
+* monero-ecosystem
+	- monero-cpp
+	- monero-javascript
+	- monero-java
+	- PiNode-XMR
+	- monero-rpc-rs
+	- monero-ecosystem.github.io
+	- monero-python
+	- monero-translations
+	- telegram-monerotipbot
+	- meta
+	- go-monero-rpc-client
+	- outreach-docs
+	- monero_health
+	- monero_scripts
+	- MoneroTipper
+	- monero-GUI-guide
+	- csharp-monero-rpc-client
+	- monerobox
+	- moneriote-python
+	- python-monerorpc
+	- Stellumo
+	- XMR-ETA
+	- dont-buy-monero-sticker
+	- vanity-monero
+	- promo-video
+	- qml-xmr
+	- Monero-Crypto-Lock
+	- pymonero
+* moneroexamples
+	- onion-monero-blockchain-explorer
+	- openmonero
+	- private-testnet
+	- transactions-report
+* monero-integrations
+	- monerowhmcs
+	- moneroodoo
+	- monerowp
+	- .github
+	- monerophp
+	- monerops
+	- monerocart3
+	- moneroshopify
+	- moneromagento
+	- monerocart
+	- Payment-Plugin-Template
+	- monerothirty
+	- moneronodejs
+	- monerogo
+* moneromooo-monero
+	- bitmonero
+	- monero-site
+	- monero-update
+	- monero-wallet-generator
+* monero-project
+	- monero
+	- monero-gui
+	- monero-site
+	- gitian.sigs
+	- supercop
+	- mininero
+	- research-lab
+	- kovri
+	- unbound
+	- monero-downloads
+	- kastelo
+	- kovri-docs
+	- kovri-site
+	- monero-forum
+	- xmr-seeder
+	- urs
+* monero-rs
+	- monero-lws
+	- base58m
+	- monero-rs
+	- .github
+	- monero-epee-bin-serde
+	- base58-monero
+	- workflows
+* mymonero
+	- mymonero-libapp-js
+	- mymonero-libapp-cpp
+	- mymonero-core-cpp
+	- monero-core-custom
+	- monero
+	- mymonero-mobile
+	- mymonero-utils
+	- mymonero-app-js
+	- mymonero-core-js
+	- mymonero-android-js
+	- mymonero-enterprise-site
+	- mymonero-web-js
+	- mymonero-app-ios
+	- .github
+	- mymonero-app-ios
+	- mymonero-app-site
+	- mymonero-app-android
+	- mymonero-rpc-server
+	- mymonero-exchange-js
+	- mymonero-fraud-monitor
+* nahuhh
+	- android-termux-monero-node
+* noot
+	- atomic-swap
+* ph4r05
+	- monero
+	- trezor-firmware
+	- monero-serialize
+* plowsof
+	- listen_for_zmq
+	- monero-gui
+	- flipstarter-waas-wip
+	- monero-fund-watch
+	- monero-site
+	- post-libera-metting-logs
+	- userguide-drafts
+	- monerodevs.org
+	- funding-xmr-radio
+	- make-gui-tarball
+	- scrape-moneroj-net-charts
+	- validate-sources
+	- check-monero-bounties-subad
+	- start-multi-rpcs
+	- xmr-get-fee-estimate-test
+	- flipstarter-alerts
+* pokkst
+	- monero-decoy-scanner
+* rbrunner7
+	- monero
+	- monero-core
+* rottenstonks
+	- revuo-weekly
+* SarangNoether
+	- monero
+	- monero-site
+	- skunkworks
+	- talks
+	- qesa
+	- zero-to-monero
+* SChernykh
+	- monero
+	- monero-gui
+	- p2pool
+	- xmrig
+	- vanity_xmr_cuda
+	- RandomX
+	- RandomX_CUDA
+* selsta
+	- monero
+	- monero-gui
+	- monero-site
+* serai-dex
+	- serai
+	- substrate
+* serhack
+	- monero
+	- exploremonero-i18n
+	- getmonero.dev
+	- monero-lws
+	- monerobook
+* sethforprivacy
+	- simple-monerod-docker
+	- p2pool-docker
+	- simple-monero-wallet-rpc-docker
+	- simple-monero-docker
+* Snipa22
+	- nodejs-pool
+	- xmr-node-proxy
+	- go-xmr-lib
+* stoffu
+	- monero-core
+	- monero
+* tari-project
+	- tari
+	- tari-launchpad
+	- tari_utilities
+	- tari-scanner
+	- test-faucet
+	- tari-explorer
+	- tari-collectibles
+	- tari-web-extension
+	- wasm-examples
+	- tari-crypto
+	- tari-dot-com
+	- wallet-android
+	- wallet-ios
+	- rfcs
+	- randomx-rs
+	- bulletproofs-plus
+	- bulletproofs
+	- lmdb-rs
+	- pubsub
+	- broadcast_channel
+	- blockchain-explorer-api
+	- meta
+	- block-explorer-frontend
+	- rpgp
+	- desktop-client
+	- tari-common-ios
+	- action-buildlibs
+	- miningcore
+	- tari-data-analysis
+	- tor-hash-password
+	- tari-website
+	- wallet-grpc-client
+	- deploy
+	- tari-config-generator
+* tevador
+	- mx25519
+	- RandomX
+	- polyseed
+	- randomx-sniffer
+	- bitmonero
+	- RandomJS
+* TheCharlatan
+	- monero
+* tobtoht
+	- monero
+* UkoeHB
+	- monero
+	- Monero-RCT-report
+	- Seraphis
+* vdo
+	- xmr.sh
+	- www.xmr.sh
+* vtnerd
+	- monero-lws
+	- monero
+	- motrix
+* woodser
+	- haveno
+	- haveno-ts
+	- monero
+	- monero-deposit-scanner
+	- monerowebwallet.com
+* xiphon
+	- monero
+	- monero-gui
+	- monero-android-miner
+* xmrig
+	- xmrig
+	- base
+	- xmrig-proxy
+	- xmrig-deps
+	- xmrig-cuda
+	- xmrig-amd
+	- xmrig-workers
+	- xmrig-nonces-heatmap
+	- xmrig-config
+* xrv0
+	- monero-supply
+
+## Git
+* escapethe3RA
+	- ssh://git.monero.observer:23231/src
+
+## Sites
+wip
+## Videos
+wip
+- https://www.youtube.com/c/MoneroSpaceWorkgroup
+- https://www.youtube.com/c/MoneroTalk
+- https://www.youtube.com/c/MoneroCommunityWorkgroup
+- https://www.youtube.com/c/SweetwaterDAC
+- https://www.youtube.com/channel/UCnjUpT9gGxyQ_lud7uKoTCg
+## Books
+wip
+- zero to monero
+## Images
+wip
+- gnuteardrops: https://monero.graphics
