@@ -38,7 +38,7 @@ fi
 URL="https://libera.monerologs.net"
 
 # Set channels
-CHANNEL=(monero monero-community monero-dev monero-gui monero-pow monero-research-lab monero-site)
+CHANNELS="$(sed -n '/## Libera Logs/,/^$/p' ../README.md | sed '/^#.*$/d; /^$/d; s/- //g')"
 
 # Get the date
 DATE_TODAY=$(date +"%Y%m%d")
@@ -50,7 +50,7 @@ mkdir -p "$BUILD_DIRECTORY"
 cd "$BUILD_DIRECTORY"
 
 # Loop over channel
-for c in ${CHANNEL[@]}; do
+for c in $CHANNELS; do
 mkdir -p "$c"
 cd "$c"
 
@@ -61,6 +61,11 @@ for m in {06..12}; do
 	# Loop over days in a month
 	for d in {01..31}; do
 		DATE="${y}${m}${d}"
+		# If a file is found, skip it
+		if [[ -e "$BUILD_DIRECTORY/$c/$DATE" ]]; then
+			printf "\e[1;93m%s\e[0m%s\n" "[LOG FOUND, SKIPPING] " "$c/$DATE"
+			continue
+		fi
 		if wget -q "$URL/$c/$DATE/raw" -O "$DATE"; then
 			printf "\e[1;92m%s\e[0m%s\n" "[  OK  ] " "$c/$DATE"
 		else
@@ -80,10 +85,16 @@ for y in {2022..2025}; do
 			DATE="${y}${m}${d}"
 			# Exit if the date is the current day.
 			[[ $DATE = "$DATE_TODAY" ]] && break 3
+			# If a file is found, skip it
+			if [[ -e "$BUILD_DIRECTORY/$c/$DATE" ]]; then
+				printf "\e[1;93m%s\e[0m%s\n" "[LOG FOUND, SKIPPING] " "$BUILD_DIRECTORY/$c/$DATE"
+				continue
+			fi
 			if wget -q "$URL/$c/$DATE/raw" -O "$DATE"; then
 				printf "\e[1;92m%s\e[0m%s\n" "[  OK  ] " "$c/$DATE"
 			else
 				printf "\e[1;91m%s\e[0m%s\n" "[WGET ERROR] " "$URL/$c/$DATE"
+				read
 			fi
 		done
 	done

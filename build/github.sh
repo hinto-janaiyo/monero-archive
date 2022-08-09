@@ -37,7 +37,7 @@ fi
 # Get the list from the README.md
 # Everything inbetween "## GitHub" & "## Git"
 # Also, remove comments and empty lines
-LIST=$(sed -n '/## GitHub/,/## Git/p' ../README.md | sed '/^#.*$/d; /^$/d')
+LIST=$(sed -n '/## GitHub/,/^$/p' ../README.md | sed '/^#.*$/d; /^$/d')
 
 # Get the amount of repos we're cloning
 NUM_MAX=$(printf "%s\n" "$LIST" | grep -c '^[[:blank:]]\+-')
@@ -62,10 +62,16 @@ for i in $LIST; do
 	# Else, get repo from "-"
 	else
 		REPO="${i/[[:blank:]]- }"
-		printf "\e[1;92m[CLONING \e[1;93m${NUM_NOW}\e[1;92m/\e[1;95m${NUM_MAX}\e[1;92m] \e[1;97m%s\e[0m\n" "$AUTHOR | $REPO"
+		# If a directory is found, skip it
+		if [[ -d "$BUILD_DIRECTORY/$AUTHOR/$REPO" ]]; then
+			printf "\e[1;93m%s\e[0m%s\n" "[REPO FOUND, SKIPPING ${NUM_NOW}/${NUM_MAX}] " "$AUTHOR/$REPO"
+			((NUM_NOW++))
+			continue
+		fi
 		# Clone into $AUTHOR
 		# Ask if user would like to continue
 		# if git clone fails.
+		printf "\e[1;92m[CLONING \e[1;93m${NUM_NOW}\e[1;92m/\e[1;95m${NUM_MAX}\e[1;92m] \e[1;97m%s\e[0m\n" "$AUTHOR | $REPO"
 		until git clone --recursive "https://github.com/$AUTHOR/$REPO"; do
 			# Remove if failed
 			rm -rf "$BUILD_DIRECTORY/$AUTHOR/$REPO"
@@ -73,8 +79,8 @@ for i in $LIST; do
 			printf "\e[1;91m%s\e[0m%s\n" "[GIT CLONE ERROR: https://github.com/$AUTHOR/$REPO] " "What to do? (Retry / skip) "
 			read -r RETRY_SKIP
 			case "$RETRY_SKIP" in
-				retry|Retry|RETRY|' ') :;;
-				*) break 1;;
+				skip|Skip|SKIP) break;;
+				*) :;;
 			esac
 		done
 		# Increment current number

@@ -29,6 +29,25 @@ To build an archive:
 A folder within `build/` will be created named something like `monero-archive-a18f610`. This reflects the current git commit you're on.
 Inside that folder you'll find `github`, `youtube`, `libera_logs` or all 3, depending on what you built.
 
+Repos/channel folders already found will be skipped.
+
+### Configuration
+**This `README.md` itself is the configuration file for the scripts.**
+
+To NOT scrape certain GitHub authors/repos, Youtube channels, or Libera channels, simply remove it from the `README.md` before running the script.
+
+To add your own GitHub authors/repos, please follow this syntax:
+```
+* AUTHOR
+	- REPO
+	- ANOTHER_REPO
+* ANOTHER_AUTHOR
+```
+To add Youtube channels:
+```
+* https://youtube.com/c/YOUTUBE_CHANNEL
+```
+
 ## Requirements
 | Script         | Requires             |
 |----------------|----------------------|
@@ -37,9 +56,9 @@ Inside that folder you'll find `github`, `youtube`, `libera_logs` or all 3, depe
 | libera_logs.sh | `git` & `wget`       |
 
 ## Warnings
-1. `github.sh` will RECURSIVELY clone repos. This means the **entire** history of the Git tree will be cloned along with any submodules.
-2. `youtube.sh` may get your IP temporarily banned from Youtube.
-3. `libera_logs.sh` will download the **entire** history of **all** channels. It sources from [`https://libera.monerologs.net`](https://libera.monerologs.net) which I'm not sure who operates so be gentle :D
+1. `github.sh` will RECURSIVELY clone repos. This means the entire history of the Git tree will be cloned along with any submodules
+2. `youtube.sh` may get your IP temporarily banned from Youtube
+3. `libera_logs.sh` will download the entire history of channels. It sources from [`https://libera.monerologs.net`](https://libera.monerologs.net) which I'm not sure who operates so be gentle :D
 
 ## Content List
 * [GitHub](#GitHub)
@@ -441,22 +460,25 @@ Inside that folder you'll find `github`, `youtube`, `libera_logs` or all 3, depe
 * xrv0
 	- monero-supply
 
+
 ## Libera Logs
-- #monero [`https://libera.monerologs.net/monero`](https://libera.monerologs.net/monero)
-- #monero-community [`https://libera.monerologs.net/monero-community`](https://libera.monerologs.net/monero-community)
-- #monero-dev [`https://libera.monerologs.net/monero-dev`](https://libera.monerologs.net/monero-dev)
-- #monero-gui [`https://libera.monerologs.net/monero-gui`](https://libera.monerologs.net/monero-gui)
-- #monero-pow [`https://libera.monerologs.net/monero-pow`](https://libera.monerologs.net/monero-pow)
-- #monero-research-lab [`https://libera.monerologs.net/monero-research-lab`](https://libera.monerologs.net/monero-research-lab)
-- #monero-site [`https://libera.monerologs.net/monero-site`](https://libera.monerologs.net/monero-site)
+* monero
+* monero-community
+* monero-dev
+* monero-gui
+* monero-pow
+* monero-research-lab
+* monero-site
+
 
 ## Youtube
-- Monero Talk [`https://www.youtube.com/c/MoneroTalk`](https://www.youtube.com/c/MoneroTalk)
-- Monero Space [`https://www.youtube.com/c/MoneroSpaceWorkgroup`](https://www.youtube.com/c/MoneroSpaceWorkgroup)
-- Monero Community Workgroup [`https://www.youtube.com/c/MoneroCommunityWorkgroup`](https://www.youtube.com/c/MoneroCommunityWorkgroup)
-- Sweetwater Digital Asset Consulting [`https://www.youtube.com/c/SweetwaterDAC`](https://www.youtube.com/c/SweetwaterDAC)
-- Monero [`https://www.youtube.com/channel/UCnjUpT9gGxyQ_lud7uKoTCg`](https://www.youtube.com/channel/UCnjUpT9gGxyQ_lud7uKoTCg)
-- Monero Guides [`https://www.youtube.com/c/MoneroGuides`](https://www.youtube.com/c/MoneroGuides)
+* https://www.youtube.com/c/MoneroTalk
+* https://www.youtube.com/c/MoneroSpaceWorkgroup
+* https://www.youtube.com/c/MoneroCommunityWorkgroup
+* https://www.youtube.com/c/SweetwaterDAC
+* https://www.youtube.com/c/MoneroGuides
+* https://www.youtube.com/channel/UCnjUpT9gGxyQ_lud7uKoTCg
+
 
 ## PGP Keys
 PGP keys are already collected and found in this repo in `pgp/`.
@@ -522,6 +544,7 @@ Any other keys are found in the individual's GitHub or website.
 * wowario `61E3EA3F7D2A6C2796F189FA24DCBE762DE9C111`
 * xiphon `8F77964DBBA324198D78A603BD72EC6C3F187C67`
 * xmrig `9AC4CEA8E66E35A5C7CDDC1B446A53638BE94409`
+
 
 ## Extra
 WIP
