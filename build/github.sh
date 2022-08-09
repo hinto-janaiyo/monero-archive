@@ -67,6 +67,9 @@ for i in $LIST; do
 		# Ask if user would like to continue
 		# if git clone fails.
 		until git clone --recursive "https://github.com/$AUTHOR/$REPO"; do
+			# Remove if failed
+			rm -rf "$BUILD_DIRECTORY/$AUTHOR/$REPO"
+			# Ask user either to retry or skip
 			printf "\e[1;91m%s\e[0m%s\n" "[GIT CLONE ERROR: https://github.com/$AUTHOR/$REPO] " "What to do? (Retry / skip) "
 			read -r RETRY_SKIP
 			case "$RETRY_SKIP" in

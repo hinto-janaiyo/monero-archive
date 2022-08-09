@@ -61,10 +61,10 @@ for m in {06..12}; do
 	# Loop over days in a month
 	for d in {01..31}; do
 		DATE="${y}${m}${d}"
-		if wget -q "$URL/$CHANNEL/$DATE/raw" -O "$DATE"; then
-			printf "\e[1;92m%s\e[0m%s\n" "[  OK  ] " "$CHANNEL/$DATE"
+		if wget -q "$URL/$c/$DATE/raw" -O "$DATE"; then
+			printf "\e[1;92m%s\e[0m%s\n" "[  OK  ] " "$c/$DATE"
 		else
-			printf "\e[1;91m%s\e[0m%s\n" "[WGET ERROR] " "$URL/$CHANNEL/$DATE"
+			printf "\e[1;91m%s\e[0m%s\n" "[WGET ERROR] " "$URL/$c/$DATE"
 		fi
 	done
 done
@@ -80,10 +80,10 @@ for y in {2022..2025}; do
 			DATE="${y}${m}${d}"
 			# Exit if the date is the current day.
 			[[ $DATE = "$DATE_TODAY" ]] && break 3
-			if wget -q "$URL/$CHANNEL/$DATE/raw" -O "$DATE"; then
-				printf "\e[1;92m%s\e[0m%s\n" "[  OK  ] " "$CHANNEL/$DATE"
+			if wget -q "$URL/$c/$DATE/raw" -O "$DATE"; then
+				printf "\e[1;92m%s\e[0m%s\n" "[  OK  ] " "$c/$DATE"
 			else
-				printf "\e[1;91m%s\e[0m%s\n" "[WGET ERROR] " "$URL/$CHANNEL/$DATE"
+				printf "\e[1;91m%s\e[0m%s\n" "[WGET ERROR] " "$URL/$c/$DATE"
 			fi
 		done
 	done

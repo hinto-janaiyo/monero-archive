@@ -1,5 +1,5 @@
-# WIP monero-archive
-This is collection of scripts for archiving Monero related stuff. Requires GNU/Linux.
+# WORK IN PROGRESS - monero-archive
+This is a collection of scripts for archiving Monero related stuff. Requires GNU/Linux.
 
 Scripts for scraping sites hosted by individual community members are not created on purpose.
 
@@ -196,7 +196,7 @@ These are all the GitHub repos that will be cloned:
 	- onion-monero-blockchain-explorer
 	- openmonero
 	- private-testnet
-	- transactions-report
+	- transactions-export
 * moneroguides
 	- 0x01-Mining-Monero-with-P2Pool-Windows-Quick-start-guide
 	- 1x01-importing-public-keys-and-verifying-hashes
