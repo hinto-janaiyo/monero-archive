@@ -47,13 +47,13 @@ To add Youtube channels:
 ```
 * https://youtube.com/c/YOUTUBE_CHANNEL
 ```
-At the end of every list (## GitHub, etc) there must be an empty line:
+At the end of every list (GitHub, etc) there must be an empty line:
 ```
-## GitHub
+## LIST
 * AUTHOR
 	- REPO
                     <-- this empty line needs to be here
-## Youtube
+## LIST
 * CHANNEL
 ```
 
