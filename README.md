@@ -5,9 +5,13 @@ This is an archive of Monero related stuff: git trees, media, websites, etc.
 
 TODO
 * create git clone/pull script
+	- recursive
+	- all submodules
 * (github pr/issue scrape script?)
 * create media scrape script
+	- all metadata, thumbnails, etc
 * create torrent
+	- sign+hash afterwards
 
 ## Contents
 * [GitHub](#GitHub)
