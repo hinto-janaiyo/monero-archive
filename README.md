@@ -381,6 +381,10 @@ TODO
 	- monero-lws
 	- monero
 	- motrix
+* WeebDataHoarder
+	- p2pool-log
+	- p2pool-nsis
+	- p2pool-compose
 * woodser
 	- haveno
 	- haveno-ts
