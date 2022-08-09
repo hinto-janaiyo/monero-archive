@@ -9,26 +9,26 @@ If you'd like something added/removed from the list, please contact me: `hinto.j
 Or submit a pull request. If adding a GitHub repo, please add alphabetically.
 
 TODO
-* create git clone/pull script
-	- recursive
-	- all submodules
 * (github pr/issue scrape script?)
 * create media scrape script
 	- all metadata, thumbnails, etc
+* scrape chain data/stats
+* p2pool stats
+* scrape other external data
 * create torrent
 	- sign+hash afterwards
 
-## Help
+## Contents
 * [Build](#Build)
 * [Configuration](#Configuration)
 * [Requirements](#Requirements)
 * [Warnings](#Warnings)
-## Content List
-* [GitHub](#GitHub)
-* [Youtube](#Youtube)
-* [Libera Logs](#Libera-Logs)
-* [PGP Keys](#PGP-Keys)
-* [Extra](#Extra)
+* [Content List](#Content-List)
+	- [GitHub](#GitHub)
+	- [Youtube](#Youtube)
+	- [Libera Logs](#Libera-Logs)
+	- [PGP Keys](#PGP-Keys)
+	- [Extra](#Extra)
 
 ## Build
 To build an archive:
@@ -36,13 +36,13 @@ To build an archive:
 2. Goto the `build` directory: `cd monero-archive/build`
 3. Run the appropriate script, for example if you want all GitHub repos: `./github.sh`
 
-A folder within `build/` will be created named something like `monero-archive-a18f610`. This reflects the current git commit you're on.
-Inside that folder you'll find `github`, `youtube`, `libera_logs` or all 3, depending on what you built. Repos/channel folders already found will be skipped.
+A folder within `build` will be created named something like `monero-archive-a18f610`. This reflects the current git commit you're on.
+Inside that folder you'll find all your archival files. Folders already found will be skipped.
 
 ## Configuration
 **This `README.md` itself is the configuration file for the scripts.**
 
-To NOT scrape certain GitHub authors/repos, Youtube channels, or Libera channels, simply remove the entire from the `README.md` before running the script. No empty line can be left behind, make sure you delete the whole line.
+To NOT scrape certain GitHub authors/repos, Youtube channels, or Libera channels, simply remove the line from the `README.md` lists before running the script. No empty line can be left behind, make sure you delete the whole line.
 
 To add your own GitHub authors/repos, please follow this syntax:
 ```
@@ -77,6 +77,8 @@ At the end of every list (GitHub, etc) there must be an empty line:
 1. `github.sh` will RECURSIVELY clone repos. This means the entire history of the Git tree will be cloned along with any submodules
 2. `youtube.sh` may get your IP temporarily banned from Youtube
 3. `libera_logs.sh` will download the entire history of channels. It sources from [`https://libera.monerologs.net`](https://libera.monerologs.net) which I'm not sure who operates so be gentle :D
+
+# Content List
 
 ## GitHub
 * AsBenDoge
