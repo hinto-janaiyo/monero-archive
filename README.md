@@ -49,7 +49,6 @@ Inside that folder you'll find `github`, `youtube`, `libera_logs` or all 3, depe
 * [Extra](#Extra)
 
 ## GitHub
-These are all the GitHub repos that will be cloned:
 * AsBenDoge
 	- p2pool-report
 * busyboredom
@@ -443,7 +442,6 @@ These are all the GitHub repos that will be cloned:
 	- monero-supply
 
 ## Libera Logs
-The channels that will scraped:
 - #monero [`https://libera.monerologs.net/monero`](https://libera.monerologs.net/monero)
 - #monero-community [`https://libera.monerologs.net/monero-community`](https://libera.monerologs.net/monero-community)
 - #monero-dev [`https://libera.monerologs.net/monero-dev`](https://libera.monerologs.net/monero-dev)
@@ -453,7 +451,6 @@ The channels that will scraped:
 - #monero-site [`https://libera.monerologs.net/monero-site`](https://libera.monerologs.net/monero-site)
 
 ## Youtube
-The list of Youtube channels that will be scraped:
 - Monero Talk [`https://www.youtube.com/c/MoneroTalk`](https://www.youtube.com/c/MoneroTalk)
 - Monero Space [`https://www.youtube.com/c/MoneroSpaceWorkgroup`](https://www.youtube.com/c/MoneroSpaceWorkgroup)
 - Monero Community Workgroup [`https://www.youtube.com/c/MoneroCommunityWorkgroup`](https://www.youtube.com/c/MoneroCommunityWorkgroup)
