@@ -50,6 +50,10 @@ BUILD_DIRECTORY="monero-archive-github-${BUILD_UUID}"
 mkdir -p "$BUILD_DIRECTORY"
 cd "$BUILD_DIRECTORY"
 
+# Turn off error handling
+set +e
+trap - ERR
+
 # Loop over list
 IFS=$'\n'
 for i in $LIST; do
@@ -64,7 +68,16 @@ for i in $LIST; do
 		REPO="${i/[[:blank:]]- }"
 		printf "\e[1;92m[CLONING \e[1;93m${NUM_NOW}\e[1;92m/\e[1;95m${NUM_MAX}\e[1;92m] \e[1;97m%s\e[0m\n" "$AUTHOR | $REPO"
 		# Clone into $AUTHOR
-		git clone --recursive "https://github.com/$AUTHOR/$REPO" "$BUILD_DIRECTORY/$AUTHOR/$REPO"
+		# Ask if user would like to continue
+		# if git clone fails.
+		if ! git clone --recursive "https://github.com/$AUTHOR/$REPO" "$BUILD_DIRECTORY/$AUTHOR/$REPO"; then
+			printf "\e[1;91m%s\e[0m%s\n" "[GIT CLONE ERROR: https://github.com/$AUTHOR/$REPO] " "Continue anyway? (y/N) "
+			read -r YES_NO
+			case "$YES_NO" in
+				y|Y|yes|Yes|YES) :;;
+				*) exit 1;;
+			esac
+		fi
 		# Increment current number
 		((NUM_NOW++))
 	fi
