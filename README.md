@@ -7,7 +7,8 @@ Scripts for scraping sites hosted by individual community members are not create
 
 **Copyright of the content's original creator(s) & contributor(s) apply.**
 
-If you'd like something added/removed from the list, please contact me: `hinto.janaiyo@protonmail.com`
+If you'd like something added/removed from the list, please contact me: `hinto.janaiyo@protonmail.com`  
+Or submit a pull request. If adding a GitHub repo, please add alphabetically.
 
 TODO
 * create git clone/pull script

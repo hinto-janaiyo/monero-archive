@@ -20,8 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# This script recursively clones all
-# the GitHub links found in README.md
+# This script fetches all the libera logs
+# off of: https://libera.monerologs.net
 
 # Error handling
 set -e
@@ -34,49 +34,61 @@ elif [[ $PWD = */monero-archive ]]; then
 	cd build
 fi
 
-# Get the list from the README.md
-# Everything inbetween "## GitHub" & "## Git"
-# Also, remove comments and empty lines
-LIST=$(sed -n '/## GitHub/,/## Git/p' ../README.md | sed '/^#.*$/d; /^$/d')
+# Set URL
+URL="https://libera.monerologs.net"
 
-# Get the amount of repos we're cloning
-NUM_MAX=$(printf "%s\n" "$LIST" | grep -c '^[[:blank:]]\+-')
-NUM_NOW=1
+# Set channels
+CHANNEL=(monero monero-community monero-dev monero-gui monero-pow monero-research-lab monero-site)
 
-# Create build directory 'monero-archive-github-$GIT_BRANCH'
+# Get the date
+DATE_TODAY=$(date +"%Y%m%d")
+
+# Create build directory 'monero-archive-$GIT_BRANCH'
 BUILD_UUID=$(git rev-parse --short HEAD 2>/dev/null)
-BUILD_DIRECTORY="monero-archive-${BUILD_UUID}/github"
+BUILD_DIRECTORY="monero-archive-${BUILD_UUID}/libera_logs"
 mkdir -p "$BUILD_DIRECTORY"
 cd "$BUILD_DIRECTORY"
 
-# Loop over list
-IFS=$'\n'
-for i in $LIST; do
-	# Get author name from "*"
-	if [[ $i = \** ]]; then
-		AUTHOR="${i/\* }"
-		# Create author directory
-		mkdir -p "$AUTHOR"
-		continue
-	# Else, get repo from "-"
-	else
-		REPO="${i/[[:blank:]]- }"
-		printf "\e[1;92m[CLONING \e[1;93m${NUM_NOW}\e[1;92m/\e[1;95m${NUM_MAX}\e[1;92m] \e[1;97m%s\e[0m\n" "$AUTHOR | $REPO"
-		# Clone into $AUTHOR
-		# Ask if user would like to continue
-		# if git clone fails.
-		if ! git clone --recursive "https://github.com/$AUTHOR/$REPO" "$BUILD_DIRECTORY/$AUTHOR/$REPO"; then
-			printf "\e[1;91m%s\e[0m%s\n" "[GIT CLONE ERROR: https://github.com/$AUTHOR/$REPO] " "Continue anyway? (y/N) "
-			read -r YES_NO
-			case "$YES_NO" in
-				y|Y|yes|Yes|YES) :;;
-				*) exit 1;;
-			esac
-		fi
-		# Increment current number
-		((NUM_NOW++))
-	fi
+# Loop over channel
+for c in ${CHANNEL[@]}; do
+mkdir -p "$c"
+cd "$c"
+
+# Loop over year
+# MAX 2025... just in case.
+for y in {2021..2025}; do
+	# BEGINNING
+	# Loop over months in a year
+	for m in {06..12}; do
+		# Loop over days in a month
+		for d in {08..31}; do
+			DATE="${y}${m}${d}"
+			if wget -q "$URL/$CHANNEL/$DATE/raw" -O "$DATE"; then
+				printf "\e[1;92m%s\e[0m%s\n" "[  OK  ] " "$CHANNEL/$DATE"
+			else
+				printf "\e[1;91m%s\e[0m%s\n" "[WGET ERROR] " "$URL/$CHANNEL/$DATE"
+			fi
+		done
+	done
+
+	# EVERYTHING AFTER
+	# Loop over months in a year
+	for m in {01..12}; do
+		# Loop over days in a month
+		for d in {01..31}; do
+			DATE="${y}${m}${d}"
+			# Exit if the date is the current day.
+			[[ $DATE = "$DATE_TODAY" ]] && break 3
+			if wget -q "$URL/$CHANNEL/$DATE/raw" -O "$DATE"; then
+				printf "\e[1;92m%s\e[0m%s\n" "[  OK  ] " "$CHANNEL/$DATE"
+			else
+				printf "\e[1;91m%s\e[0m%s\n" "[WGET ERROR] " "$URL/$CHANNEL/$DATE"
+			fi
+		done
+	done
+done
+cd "$BUILD_DIRECTORY"
 done
 
 # End message
-printf "\e[1;92m[monero-archive] \e[1;97m%s\e[0m\n" "github.sh done!"
+printf "\e[1;92m[monero-archive] \e[1;97m%s\e[0m\n" "libera_logs.sh done!"
