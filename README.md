@@ -1,7 +1,5 @@
-# monero-archive
-WIP
-
-This is an archive of Monero related stuff: git trees, keys, binaries, media, etc.
+# WIP monero-archive
+This is an archive of Monero related stuff: git trees, keys, media, etc.
 
 TODO
 * create git clone/pull script
@@ -21,6 +19,8 @@ TODO
 * [Videos](#Videos)
 * [Books](#Books)
 * [Images](#Images)
+* [Text](#Text)
+* [Extra](#Extra)
 
 ## GitHub
 * AsBenDoge
@@ -452,17 +452,30 @@ Any other keys are found in the individual's GitHub or website.
 * xmrig `9AC4CEA8E66E35A5C7CDDC1B446A53638BE94409`
 
 ## Sites
-wip
+WIP
+- moneroj.net charts
+
 ## Videos
-wip
+WIP
 - https://www.youtube.com/c/MoneroSpaceWorkgroup
 - https://www.youtube.com/c/MoneroTalk
 - https://www.youtube.com/c/MoneroCommunityWorkgroup
 - https://www.youtube.com/c/SweetwaterDAC
 - https://www.youtube.com/channel/UCnjUpT9gGxyQ_lud7uKoTCg
+
 ## Books
-wip
+WIP
 - zero to monero
+
 ## Images
-wip
+WIP
 - gnuteardrops: https://monero.graphics
+
+## Text
+WIP
+- meeting chat logs
+- sethforprivacy
+
+## Extra
+WIP
+- binaries + hashes + sig
