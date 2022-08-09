@@ -313,7 +313,7 @@ To add Youtube channels:
 	- flipstarter-waas-wip
 	- monero-fund-watch
 	- monero-site
-	- post-libera-metting-logs
+	- post-libera-meeting-logs
 	- userguide-drafts
 	- monerodevs.org
 	- funding-xmr-radio
