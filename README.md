@@ -256,6 +256,8 @@ TODO
 	- flipstarter-alerts
 * pokkst
 	- monero-decoy-scanner
+* Rucknium
+	- OSPEAD
 * rbrunner7
 	- monero
 	- monero-core
