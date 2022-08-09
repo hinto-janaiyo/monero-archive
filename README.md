@@ -130,6 +130,7 @@ To add Youtube channels:
 	- monero-bash
 	- monero-gpg
 	- monero-utils
+	- monero-archive
 * hyahatiph-labs
 	- bitmonero
 	- monero-gui
