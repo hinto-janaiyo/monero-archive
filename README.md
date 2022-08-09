@@ -25,6 +25,9 @@ TODO
 ## GitHub
 * AsBenDoge
 	- p2pool-report
+* busyboredom
+	- acceptxmr
+	- ministo
 * cake-tech
 	- cake_wallet
 	- monero
