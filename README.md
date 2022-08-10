@@ -3,7 +3,7 @@
 
 ---
 
-This is a collection of scripts that help you creatw your own archive of Monero related stuff. Requires GNU/Linux.  
+This is a collection of scripts that help you create your own archive of Monero related things. Requires GNU/Linux.  
 Scripts for scraping sites hosted by individual community members are not created on purpose.
 
 **Other than PGP keys, there is no content in this repo, only scripts to speed up the process of obtaining it.**  
@@ -12,15 +12,15 @@ Scripts for scraping sites hosted by individual community members are not create
 If you'd like something added/removed from the list, please contact me: `hinto.janaiyo@protonmail.com`  
 Or submit a pull request. If adding a GitHub repo, please add alphabetically.
 
-TODO
-* (github pr/issue scrape script?)
-* create media scrape script
-	- all metadata, thumbnails, etc
-* scrape chain data/stats
-* p2pool stats
-* scrape other external data
-* create torrent
+* TODO
+	- github pr/issues
+	- chain data/stats
+	- p2pool stats
+	- other external data
+	- create torrent
+	- blockchain(?)
 	- sign+hash afterwards
+	- extra (binaries, hash, sigs)
 
 ## Contents
 * [Build](#Build)
