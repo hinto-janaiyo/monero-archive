@@ -44,7 +44,7 @@ A folder within `build` will be created named something like `monero-archive-a18
 Inside that folder you'll find all your archival files. Folders already found will be skipped.
 
 ## Configuration
-**This `README.md` itself is the configuration file for the scripts.**
+**The [Content List](#Content-List) section of this `README.md` IS the configuration file.**
 
 To REMOVE a GitHub repo, Youtube channel, etc, simply remove that line in `README.md` before running the script. Make sure you delete the whole line, no empty spaces.
 
