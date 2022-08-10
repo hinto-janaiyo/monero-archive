@@ -35,8 +35,7 @@ elif [[ $PWD = */monero-archive ]]; then
 fi
 
 # Get the list from the README.md
-# Everything inbetween "## GitHub" & "## Git"
-# Also, remove comments and empty lines
+# Everything inbetween "## GitHub" and the first empty line found.
 LIST=$(sed -n '/## GitHub/,/^$/p' ../README.md | sed '/^#.*$/d; /^$/d')
 
 # Get the amount of repos we're cloning
@@ -51,9 +50,6 @@ cd "$BUILD_DIRECTORY"
 
 # Begin
 printf "\e[1;92m[monero-archive] \e[1;97m%s\e[0m\n" "starting build in: $BUILD_DIRECTORY"
-
-
-
 
 # Loop over list
 IFS=$'\n'

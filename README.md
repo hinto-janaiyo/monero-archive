@@ -54,8 +54,10 @@ To add your own GitHub authors/repos, please follow this syntax:
 ```
 To add Youtube channels:
 ```
-* https://youtube.com/c/YOUTUBE_CHANNEL
+* NAME_WITH_NO_SPACE https://youtube.com/c/YOUTUBE_CHANNEL
 ```
+The 1st argument is the name with no spaces, the 2nd is the Youtube link.
+
 At the end of every list (GitHub, etc) there must be an empty line:
 ```
 ## LIST
@@ -67,11 +69,18 @@ At the end of every list (GitHub, etc) there must be an empty line:
 ```
 
 ## Requirements
-| Script         | Requires             |
-|----------------|----------------------|
-| github.sh      | `git`                |
-| youtube.sh     | `git` & `youtube-dl` |
-| libera_logs.sh | `git` & `wget`       |
+| Script         | Required             | Optional                    | Debian/Ubuntu Package                  | Arch Linux Package                               |
+|----------------|----------------------|-----------------------------|----------------------------------------|--------------------------------------------------|
+| github.sh      | `git`                |                             | `git`                                  | `git`                                            |
+| youtube.sh     | `git` & `youtube-dl` | `ffmpeg`, `yt-dlp`, `aria2` | `git`, `ffmpeg`, `youtube-dl`, `aria2` | `git`, `ffmpeg`, `youtube-dl`, `yt-dlp`, `aria2` |
+| libera_logs.sh | `git` & `wget`       | `curl`                      | `git`, `wget`, `curl`                  | `git`, `wget`, `curl`                            |
+**As long as you have the packages in `Required`, the scripts will work.**
+
+`youtube.sh` will use `yt-dlp` by default, and `youtube-dl` as a fallback. Having [`aria2`](https://github.com/aria2/aria2) or [`ffmpeg`](https://github.com/FFmpeg/FFmpeg) make downloads much faster, but are optional. If you're using a Debian-based distro, `yt-dlp` can be installed through PIP: `python3 -m pip install -U yt-dlp`. [See more info here about yt-dlp here.](https://github.com/yt-dlp)
+
+`libera_logs.sh` will use `wget` by default and `curl` as a fallback.
+
+`git` is needed in all scripts.
 
 ## Warnings
 1. `github.sh` will RECURSIVELY clone repos. This means the entire history of the Git tree will be cloned along with any submodules
@@ -488,13 +497,14 @@ At the end of every list (GitHub, etc) there must be an empty line:
 
 
 ## Youtube
-* https://www.youtube.com/c/MoneroTalk
-* https://www.youtube.com/c/MoneroSpaceWorkgroup
-* https://www.youtube.com/c/MoneroCommunityWorkgroup
-* https://www.youtube.com/c/SweetwaterDAC
-* https://www.youtube.com/c/MoneroGuides
-* https://www.youtube.com/channel/UCnjUpT9gGxyQ_lud7uKoTCg
-
+* Monero_Talk https://www.youtube.com/c/MoneroTalk
+* Monero_Space https://www.youtube.com/c/MoneroSpaceWorkgroup
+* Monero_Community_Workgroup https://www.youtube.com/c/MoneroCommunityWorkgroup
+* Sweetwater_Digital_Asset_Consulting https://www.youtube.com/c/SweetwaterDAC
+* Monero_Guides https://www.youtube.com/c/MoneroGuides
+* Monero https://www.youtube.com/channel/UCnjUpT9gGxyQ_lud7uKoTCg
+* DEFCON_27_Monero_Village https://www.youtube.com/playlist?list=PL9fPq3eQfaaBiCOF12ZYejtj21sI1jm0I
+* Justin_Ehrenhofer's_Monero_Meetups https://www.youtube.com/playlist?list=PLBwW3kFqHdFg72DeOcNQ552W607ATQURq
 
 ## PGP Keys
 PGP keys are already collected and found in this repo in `pgp/`.
