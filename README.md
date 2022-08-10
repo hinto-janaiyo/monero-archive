@@ -25,7 +25,7 @@ Or submit a pull request. If adding a GitHub repo, please add alphabetically.
 * [Build](#Build)
 * [Configuration](#Configuration)
 * [Requirements](#Requirements)
-* [Limitations](#Limitations)
+* [Warnings](#Warnings)
 * [Content List](#Content-List)
 	- [GitHub](#GitHub)
 	- [Youtube](#Youtube)
@@ -40,7 +40,7 @@ To build an archive:
 3. Run the appropriate script, for example if you want all GitHub repos: `./github.sh`
 
 A folder within `build` will be created named something like `monero-archive-a18f610`. This reflects the current git commit you're on.
-Inside that folder you'll find all your archival files. Folders already found will be skipped.
+Inside that folder you'll find all your archival files. Folders/files already found will be skipped during the download process.
 
 ## Configuration
 **The [Content List](#Content-List) section of this `README.md` IS the configuration file.**
@@ -72,44 +72,45 @@ At the end of every list (GitHub, Youtube, etc) make sure there is an empty line
 ```
 
 ## Requirements
-| Script           | Required         | Optional      | Debian/Ubuntu Package  | Arch Linux Package             |
-|------------------|------------------|---------------|------------------------|--------------------------------|
-| github_repos.sh  | git              |               | git                    | git                            |
-| github_issues.sh | git & wget       |               | git, wget              | git, wget                      |
-| github_pulls.sh  | git & wget       |               | git, wget              | git, wget                      |
-| libera_logs.sh   | git & wget       |               | git, wget              | git, wget                      |
-| youtube.sh       | git & youtube-dl | yt-dlp, aria2 | git, youtube-dl, aria2 | git, youtube-dl, yt-dlp, aria2 |
+| Script           | What does it download?              | Required packages | Optional packages | Debian/Ubuntu package  | Arch Linux package             |
+|------------------|-------------------------------------|-------------------|-------------------|------------------------|--------------------------------|
+| github_repos.sh  | GitHub repositories (recursively)   | git               |                   | git                    | git                            |
+| github_html.sh   | Full local copy of GitHub repo HTML | git & wget        |                   | git, wget              | git, wget                      |
+| libera_logs.sh   | Chat logs (Matrix, IRC, etc)        | git & wget        |                   | git, wget              | git, wget                      |
+| youtube.sh       | Youtube channels/videos             | git & youtube-dl  | yt-dlp, aria2     | git, youtube-dl, aria2 | git, youtube-dl, yt-dlp, aria2 |
 
-**As long as you have the packages in `Required`, the scripts will work.**
+**As long as you have the packages in `Required packages`, the scripts will work.**
 
 ---
 
-***youtube.sh*** will use `yt-dlp` by default, and `youtube-dl` as a fallback. Having [`aria2`](https://github.com/aria2/aria2) make downloads much faster and the video quality better, but it is optional.
+***youtube.sh*** will use `yt-dlp` by default, and `youtube-dl` as a fallback. If [`aria2`](https://github.com/aria2/aria2) is found, it'll be used. It makes downloads much faster and allows for higher video quality selection, but it is optional.
 
-If you're using a Debian-based distro, `yt-dlp` can be installed through PIP: `python3 -m pip install -U yt-dlp`  
-[See more info here about yt-dlp here.](https://github.com/yt-dlp)
+[If you're using a Debian-based distro, `yt-dlp` can be installed through PIP:](https://github.com/yt-dlp) `python3 -m pip install -U yt-dlp`
 
 `git` is needed in all scripts.
 
-## Limitations
-### `github_issues.sh` & `github_pull.sh`
-These two scripts use GitHub's API. GitHub is ***very*** stingy about how much data they give. You WILL get rate-limited.
+## Warnings
+1. These scripts will download **enormous amounts of data,** make sure you have to disk space.
+2. The GitHub scripts will download **RECURSIVELY,** every submodule, hyperlink (within github.com), etc, will be followed and downloaded.
+3. Your IP may get temporarily rate-limited/banned from GitHub/Youtube.
 
-### `youtube.sh`
-Youtube does rate-limiting as well, but they usually just throttle your download to unbearable speeds.
 
-### Solution
-To combat this, either run the scripts over multiple sessions or if you have a VPN, edit the script to change IP's every time you get rate-limited:
-```
-#-------------------------------#
-# AUTO-VPN SWITCH CONFIGURATION #
-#-------------------------------#
-VPN_COMMAND=(my_vpn --connect --random)
-```
-Every time the script detects a rate-limit, it will execute the command you entered.  
-If you don't know how to do this, contact me (`hinto.janaiyo@protonmail.com`) and I'll try to create a script for your particular VPN.
 
-Using TOR and switching circuits works too, but keep in mind: the chance of that TOR IP already being rate-limited is high.
+
+
+
+
+
+
+
+
+
+
+
+[comment]: # (----------------------------------------------------------------------------------------------------- CONTENT LIST CONFIGURATION)
+[comment]: # (Hi, you'll only see this if you're editing the README.md)
+[comment]: # (Below is the Content List, simply add/remove the things)
+[comment]: # (that you personally want in your archives, have fun...!)
 
 # Content List
 ## GitHub
