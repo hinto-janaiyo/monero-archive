@@ -48,7 +48,7 @@ if hash yt-dlp; then
 		printf "\e[1;93m%s\e[0m%s\n" "[monero-archive] " "warning: arai2 not detected, detected, quality and speed might be lower"
 	fi
 # [youtube-dl]
-if hash youtube-dl; then
+elif hash youtube-dl; then
 	printf "\e[1;92m%s\e[0m%s\n" "[monero-archive] " "youtube-dl detected"
 	COMMAND=(--write-description --write-thumbnail --all-subs)
 	# check for aria2
