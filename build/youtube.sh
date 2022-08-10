@@ -1,4 +1,4 @@
-# I don't actually care about copying, just don't sue me please :D
+ # I don't actually care about copying, just don't sue me please :D
 #
 # Copyright (c) 2022 hinto.janaiyo <https://github.com/hinto-janaiyo>
 #
@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# This script recursively uses `youtube-dl`
+# This script uses `yt-dlp` or `youtube-dl`
 # to download the Youtube channesl found in README.md
 
 # Error handling
@@ -34,35 +34,29 @@ elif [[ $PWD = */monero-archive ]]; then
 	cd build
 fi
 
-# Find out which downloader we're gonna use :D
+# Find out which downloader we're gonna use
 # [yt-dlp]
 if hash yt-dlp; then
 	printf "\e[1;92m%s\e[0m%s\n" "[monero-archive] " "yt-dlp detected"
 	YT_DLP=true
 	COMMAND=(--write-description --write-thumbnail --write-subs --no-write-info-json)
-	# check for aria2 or ffmpeg
+	# check for aria2
 	if hash aria2c; then
 		printf "\e[1;92m%s\e[0m%s\n" "[monero-archive] " "aria2 detected"
 		COMMAND=(${COMMAND[@]} --downloader aria2c --merge-output-format mp4 -f bestvideo+bestaudio[ext=m4a]/best)
-	elif hash ffmpeg; then
-		printf "\e[1;92m%s\e[0m%s\n" "[monero-archive] " "ffmpeg detected"
-		COMMAND=(${COMMAND[@]} --downloader ffmpeg --merge-output-format mp4 -f bestvideo+bestaudio[ext=m4a]/best)
 	else
-		printf "\e[1;92m%s\e[0m%s\n" "[monero-archive] " "no extra downloader detected"
+		printf "\e[1;93m%s\e[0m%s\n" "[monero-archive] " "warning: arai2 not detected, detected, quality and speed might be lower"
 	fi
 # [youtube-dl]
-elif hash youtube-dl; then
+if hash youtube-dl; then
 	printf "\e[1;92m%s\e[0m%s\n" "[monero-archive] " "youtube-dl detected"
 	COMMAND=(--write-description --write-thumbnail --all-subs)
-	# check for aria2 or ffmpeg
+	# check for aria2
 	if hash aria2c; then
 		printf "\e[1;92m%s\e[0m%s\n" "[monero-archive] " "aria2 detected"
 		COMMAND=(${COMMAND[@]} --external-downloader aria2c --merge-output-format mp4 -f bestvideo+bestaudio[ext=m4a]/best)
-	elif hash ffmpeg; then
-		printf "\e[1;92m%s\e[0m%s\n" "[monero-archive] " "ffmpeg detected"
-		COMMAND=(${COMMAND[@]} --external-downloader ffmpeg --merge-output-format mp4 -f bestvideo+bestaudio[ext=m4a]/best)
 	else
-		printf "\e[1;92m%s\e[0m%s\n" "[monero-archive] " "no extra downloader detected"
+		printf "\e[1;93m%s\e[0m%s\n" "[monero-archive] " "warning: aria2 not detected, quality and speed might be lower"
 	fi
 # else, error + exit
 else
@@ -74,7 +68,7 @@ fi
 # Everything inbetween "## Youtube" and the first empty line found.
 LIST=$(sed -n '/## Youtube/,/^$/p' ../README.md | sed '/^#.*$/d; /^$/d; s/^* //g')
 
-# Create build directory 'monero-archive-github-$GIT_BRANCH'
+# Create build directory 'monero-archive-$GIT_BRANCH'
 BUILD_UUID=$(git rev-parse --short HEAD 2>/dev/null)
 BUILD_DIRECTORY="$PWD/monero-archive-${BUILD_UUID}/youtube"
 mkdir -p "$BUILD_DIRECTORY"
@@ -96,14 +90,20 @@ for i in $LIST; do
 
 	# Fix COMMAND to include build directory
 	COMMAND=(${COMMAND[@]} --output "${BUILD_DIRECTORY}/${NAME}/%(title)s/%(title)s.%(ext)s")
+	# Because printf splits arrays
+	PRINTF_COMMAND="${COMMAND[@]}"
 
 	# Download
 	printf "\e[1;92m[DOWNLOADING]\e[0m %s\n" "monero-archive-${BUILD_UUID}/youtube/${NAME}"
+	# [yt-dlp]
 	if [[ $YT_DLP = true ]]; then
-		printf "\e[1;92m[COMMAND USED]\e[0m %s\n\n" "yt-dlp $COMMAND"
+		printf "\e[1;92m[COMMAND USED]\e[0m %s\n" "yt-dlp $PRINTF_COMMAND"
+		echo
 		yt-dlp ${COMMAND[@]} "$LINK"
+	# [youtube-dl]
 	else
-		printf "\e[1;92m[COMMAND USED]\e[0m %s\n\n" "youtube-dl $COMMAND"
+		printf "\e[1;92m[COMMAND USED]\e[0m %s\n" "youtube-dl $PRINTF_COMMAND"
+		echo
 		youtube-dl ${COMMAND[@]} "$LINK"
 	fi
 done

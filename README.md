@@ -69,14 +69,14 @@ At the end of every list (GitHub, etc) there must be an empty line:
 ```
 
 ## Requirements
-| Script         | Required             | Optional                    | Debian/Ubuntu Package                  | Arch Linux Package                               |
-|----------------|----------------------|-----------------------------|----------------------------------------|--------------------------------------------------|
-| github.sh      | `git`                |                             | `git`                                  | `git`                                            |
-| youtube.sh     | `git` & `youtube-dl` | `ffmpeg`, `yt-dlp`, `aria2` | `git`, `ffmpeg`, `youtube-dl`, `aria2` | `git`, `ffmpeg`, `youtube-dl`, `yt-dlp`, `aria2` |
-| libera_logs.sh | `git` & `wget`       | `curl`                      | `git`, `wget`, `curl`                  | `git`, `wget`, `curl`                            |
+| Script         | Required             | Optional          | Debian/Ubuntu Package        | Arch Linux Package                     |
+|----------------|----------------------|-------------------|------------------------------|----------------------------------------|
+| github.sh      | `git`                |                   | `git`                        | `git`                                  |
+| youtube.sh     | `git` & `youtube-dl` | `yt-dlp`, `aria2` | `git`, `youtube-dl`, `aria2` | `git`, `youtube-dl`, `yt-dlp`, `aria2` |
+| libera_logs.sh | `git` & `wget`       | `curl`            | `git`, `wget`, `curl`        | `git`, `wget`, `curl`                  |
 **As long as you have the packages in `Required`, the scripts will work.**
 
-`youtube.sh` will use `yt-dlp` by default, and `youtube-dl` as a fallback. Having [`aria2`](https://github.com/aria2/aria2) or [`ffmpeg`](https://github.com/FFmpeg/FFmpeg) make downloads much faster, but are optional. If you're using a Debian-based distro, `yt-dlp` can be installed through PIP: `python3 -m pip install -U yt-dlp`. [See more info here about yt-dlp here.](https://github.com/yt-dlp)
+`youtube.sh` will use `yt-dlp` by default, and `youtube-dl` as a fallback. Having [`aria2`](https://github.com/aria2/aria2) make downloads much faster and the video quality better, but it is optional. If you're using a Debian-based distro, `yt-dlp` can be installed through PIP: `python3 -m pip install -U yt-dlp`. [See more info here about yt-dlp here.](https://github.com/yt-dlp) [`Aria2`](https://github.com/aria2/aria2) is available in Debian/Ubuntu/Arch as the package: `aria2`
 
 `libera_logs.sh` will use `wget` by default and `curl` as a fallback.
 
