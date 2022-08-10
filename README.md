@@ -1,5 +1,5 @@
 # WORK IN PROGRESS - monero-archive
-This is a collection of scripts for archiving Monero related stuff. Requires GNU/Linux.  
+This is a collection of scripts that help you creatw your own archive of Monero related stuff. Requires GNU/Linux.  
 Scripts for scraping sites hosted by individual community members are not created on purpose.
 
 **Other than PGP keys, there is no content in this repo, only scripts to speed up the process of obtaining it.**  
