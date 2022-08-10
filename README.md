@@ -46,7 +46,7 @@ Inside that folder you'll find all your archival files. Folders already found wi
 ## Configuration
 **This `README.md` itself is the configuration file for the scripts.**
 
-To REMOVE things, simply remove that line in the Content List section of the `README.md` before running the script. Make sure you delete the whole line, no empty spaces.
+To REMOVE a GitHub repo, Youtube channel, etc, simply remove that line in `README.md` before running the script. Make sure you delete the whole line, no empty spaces.
 
 To ADD things, edit the `README.md` and follow this syntax:
 
