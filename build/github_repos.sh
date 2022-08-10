@@ -50,8 +50,8 @@ cd "$BUILD_DIRECTORY"
 
 # Add to timestamp file
 # and add other files.
-echo "[github_repos.sh start time] $(date +"%Y-%m-%d")" >> "$BUILD_DIRECTORY/timestamp"
-cp -f ../README.md "$BUILD_DIRECTORY"
+echo "[github_html.sh start time] $(date +"%Y-%m-%d")" >> ../timestamp
+cp -f ../../../README.md ../
 
 # Begin
 printf "\e[1;92m[monero-archive] \e[1;97m%s\e[0m\n" "starting build in: $BUILD_DIRECTORY"
