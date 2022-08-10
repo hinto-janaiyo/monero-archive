@@ -50,7 +50,7 @@ cd "$BUILD_DIRECTORY"
 
 # Add to timestamp file
 # and add other files.
-echo "[github_html.sh start time] $(date +"%Y-%m-%d")" >> ../timestamp
+echo "[github_repos.sh start time] $(date +"%Y-%m-%d")" >> ../timestamp
 cp -f ../../../README.md ../
 
 # Begin

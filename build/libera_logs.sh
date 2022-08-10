@@ -51,7 +51,7 @@ cd "$BUILD_DIRECTORY"
 
 # Add to timestamp file
 # and add other files.
-echo "[github_html.sh start time] $(date +"%Y-%m-%d")" >> ../timestamp
+echo "[libera_logs.sh start time] $(date +"%Y-%m-%d")" >> ../timestamp
 cp -f ../../../README.md ../
 
 # Loop over channel
@@ -68,14 +68,13 @@ for m in {06..12}; do
 		DATE="${y}${m}${d}"
 		# If a file is found, skip it
 		if [[ -e "$BUILD_DIRECTORY/$c/$DATE" ]]; then
-			printf "\e[1;93m%s\e[0m%s\n" "[LOG FOUND, SKIPPING] " "$c/$DATE"
+			printf "\e[1;93m%s\e[0m%s\n" "[LOG FOUND, SKIPPING] " "monero-archive-${BUILD_UUID}/libera_logs/$c/$DATE"
 			continue
 		fi
-		if wget -q "$URL/$c/$DATE/raw" -O "$DATE"; then
-			printf "\e[1;92m%s\e[0m%s\n" "[  OK  ] " "$c/$DATE"
-		else
-			printf "\e[1;91m%s\e[0m%s\n" "[WGET ERROR] " "$URL/$c/$DATE"
-		fi
+		until wget -q "$URL/$c/$DATE/raw" -O "$DATE"; do
+			printf "\e[1;91m%s\e[0m%s\n" "[WGET ERROR, RETRYING] " "monero-archive-${BUILD_UUID}/libera_logs/$URL/$c/$DATE"
+		done
+		printf "\e[1;92m%s\e[0m%s\n" "[  OK  ] " "monero-archive-${BUILD_UUID}/libera_logs/$c/$DATE"
 	done
 done
 
@@ -92,15 +91,13 @@ for y in {2022..2025}; do
 			[[ $DATE = "$DATE_TODAY" ]] && break 3
 			# If a file is found, skip it
 			if [[ -e "$BUILD_DIRECTORY/$c/$DATE" ]]; then
-				printf "\e[1;93m%s\e[0m%s\n" "[LOG FOUND, SKIPPING] " "$c/$DATE"
+				printf "\e[1;93m%s\e[0m%s\n" "[LOG FOUND, SKIPPING] " "monero-archive-${BUILD_UUID}/libera_logs/$c/$DATE"
 				continue
 			fi
-			if wget -q "$URL/$c/$DATE/raw" -O "$DATE"; then
-				printf "\e[1;92m%s\e[0m%s\n" "[  OK  ] " "$c/$DATE"
-			else
-				printf "\e[1;91m%s\e[0m%s\n" "[WGET ERROR] " "$URL/$c/$DATE"
-				read
-			fi
+			until wget -q "$URL/$c/$DATE/raw" -O "$DATE"; do
+				printf "\e[1;91m%s\e[0m%s\n" "[WGET ERROR, RETRYING] " "monero-archive-${BUILD_UUID}/libera_logs/$c/$DATE"
+			done
+			printf "\e[1;92m%s\e[0m%s\n" "[  OK  ] " "monero-archive-${BUILD_UUID}/libera_logs/$c/$DATE"
 		done
 	done
 done
