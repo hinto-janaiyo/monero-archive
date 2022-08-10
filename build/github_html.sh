@@ -79,7 +79,6 @@ for i in $LIST; do
 		printf "\e[1;92m[SCRAPING \e[1;93m${NUM_NOW}\e[1;92m/\e[1;95m${NUM_MAX}\e[1;92m] \e[1;97m%s\e[0m\n" "monero-archive-${BUILD_UUID}/github_html/$AUTHOR/$REPO"
 		until wget \
 				--recursive \
-				--no-clobber \
 				--page-requisites \
 				--html-extension \
 				--convert-links \
