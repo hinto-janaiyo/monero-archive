@@ -37,7 +37,7 @@ Or submit a pull request. If adding a GitHub repo, please add alphabetically.
 To build an archive:
 1. Clone this repo: `git clone https://github.com/hinto-janaiyo/monero-archive`
 2. Goto the `build` directory: `cd monero-archive/build`
-3. Run the appropriate script, for example if you want all GitHub repos: `./github.sh`
+3. Run the appropriate script, for example if you want all GitHub repos: `./github_repos.sh`
 
 A folder within `build` will be created named something like `monero-archive-a18f610`. This reflects the current git commit you're on.
 Inside that folder you'll find all your archival files. Folders/files already found will be skipped during the download process.
