@@ -74,6 +74,11 @@ BUILD_DIRECTORY="$PWD/monero-archive-${BUILD_UUID}/youtube"
 mkdir -p "$BUILD_DIRECTORY"
 cd "$BUILD_DIRECTORY"
 
+# Add to timestamp file
+# and add other files.
+echo "[youtube.sh start time] $(date +"%Y-%m-%d")" >> "$BUILD_DIRECTORY/timestamp"
+cp -f ../README.md "$BUILD_DIRECTORY"
+
 # Begin
 printf "\e[1;92m[monero-archive] \e[1;97m%s\e[0m\n" "starting build in: $BUILD_DIRECTORY"
 
