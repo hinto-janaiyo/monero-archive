@@ -60,9 +60,8 @@ GitHub:
 ```
 Youtube:
 ```
-* NAME_WITHOUT_SPACES https://youtube.com/YOUTUBE_CHANNEL_OR_VIDEO_LINK
+* ANY_NAME_WITHOUT_SPACES https://youtube.com/YOUTUBE_CHANNEL_OR_VIDEO_LINK
 ```
-The 1st argument is the name with no spaces, the 2nd is the Youtube link.
 
 ### Caution
 At the end of every list (GitHub, etc) make sure there is an empty line:
