@@ -13,7 +13,6 @@ If you'd like something added/removed from the list, please contact me: `hinto.j
 Or submit a pull request. If adding a GitHub repo, please add alphabetically.
 
 * TODO
-	- github pr/issues
 	- chain data/stats
 	- p2pool stats
 	- other external data
@@ -26,7 +25,7 @@ Or submit a pull request. If adding a GitHub repo, please add alphabetically.
 * [Build](#Build)
 * [Configuration](#Configuration)
 * [Requirements](#Requirements)
-* [Warnings](#Warnings)
+* [Limitations](#Limitations)
 * [Content List](#Content-List)
 	- [GitHub](#GitHub)
 	- [Youtube](#Youtube)
@@ -62,9 +61,7 @@ Youtube:
 ```
 * ANY_NAME_WITHOUT_SPACES https://youtube.com/YOUTUBE_CHANNEL_OR_VIDEO_LINK
 ```
-
-### Caution
-At the end of every list (GitHub, etc) make sure there is an empty line:
+At the end of every list (GitHub, Youtube, etc) make sure there is an empty line:
 ```
 ## LIST
 * AUTHOR
@@ -75,11 +72,13 @@ At the end of every list (GitHub, etc) make sure there is an empty line:
 ```
 
 ## Requirements
-| Script         | Required         | Optional      | Debian/Ubuntu Package  | Arch Linux Package             |
-|----------------|------------------|---------------|------------------------|--------------------------------|
-| github.sh      | git              |               | git                    | git                            |
-| youtube.sh     | git & youtube-dl | yt-dlp, aria2 | git, youtube-dl, aria2 | git, youtube-dl, yt-dlp, aria2 |
-| libera_logs.sh | git & wget       | curl          | git, wget, curl        | git, wget, curl                |
+| Script           | Required         | Optional      | Debian/Ubuntu Package  | Arch Linux Package             |
+|------------------|------------------|---------------|------------------------|--------------------------------|
+| github_repos.sh  | git              |               | git                    | git                            |
+| github_issues.sh | git & wget       |               | git, wget              | git, wget                      |
+| github_pulls.sh  | git & wget       |               | git, wget              | git, wget                      |
+| libera_logs.sh   | git & wget       |               | git, wget              | git, wget                      |
+| youtube.sh       | git & youtube-dl | yt-dlp, aria2 | git, youtube-dl, aria2 | git, youtube-dl, yt-dlp, aria2 |
 
 **As long as you have the packages in `Required`, the scripts will work.**
 
@@ -90,17 +89,29 @@ At the end of every list (GitHub, etc) make sure there is an empty line:
 If you're using a Debian-based distro, `yt-dlp` can be installed through PIP: `python3 -m pip install -U yt-dlp`  
 [See more info here about yt-dlp here.](https://github.com/yt-dlp)
 
-***libera_logs.sh*** will use `wget` by default and `curl` as a fallback.
-
 `git` is needed in all scripts.
 
-## Warnings
-1. `github.sh` will RECURSIVELY clone repos. This means the entire history of the Git tree will be cloned along with any submodules
-2. `youtube.sh` may get your IP temporarily banned from Youtube
-3. `libera_logs.sh` will download the entire history of channels. It sources from [`https://libera.monerologs.net`](https://libera.monerologs.net) which I'm not sure who operates so be gentle :D
+## Limitations
+### `github_issues.sh` & `github_pull.sh`
+These two scripts use GitHub's API. GitHub is ***very*** stingy about how much data they give. You WILL get rate-limited.
+
+### `youtube.sh`
+Youtube does rate-limiting as well, but they usually just throttle your download to unbearable speeds.
+
+### Solution
+To combat this, either run the scripts over multiple sessions or if you have a VPN, edit the script to change IP's every time you get rate-limited:
+```
+#-------------------------------#
+# AUTO-VPN SWITCH CONFIGURATION #
+#-------------------------------#
+VPN_COMMAND=(my_vpn --connect --random)
+```
+Every time the script detects a rate-limit, it will execute the command you entered.  
+If you don't know how to do this, contact me (`hinto.janaiyo@protonmail.com`) and I'll try to create a script for your particular VPN.
+
+Using TOR and switching circuits works too, but keep in mind: the chance of that TOR IP already being rate-limited is high.
 
 # Content List
-
 ## GitHub
 * AsBenDoge
 	- p2pool-report
@@ -517,6 +528,7 @@ If you're using a Debian-based distro, `yt-dlp` can be installed through PIP: `p
 * Monero https://www.youtube.com/channel/UCnjUpT9gGxyQ_lud7uKoTCg
 * DEFCON_27_Monero_Village https://www.youtube.com/playlist?list=PL9fPq3eQfaaBiCOF12ZYejtj21sI1jm0I
 * Justin_Ehrenhofer's_Monero_Meetups https://www.youtube.com/playlist?list=PLBwW3kFqHdFg72DeOcNQ552W607ATQURq
+
 
 ## PGP Keys
 PGP keys are already collected and found in this repo in `pgp/`.
