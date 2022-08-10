@@ -1,4 +1,8 @@
 # WORK IN PROGRESS - monero-archive
+![monero_archive](https://user-images.githubusercontent.com/101352116/183802526-9a748e50-30e4-4a72-a125-6823a268b419.png)
+
+---
+
 This is a collection of scripts that help you creatw your own archive of Monero related stuff. Requires GNU/Linux.  
 Scripts for scraping sites hosted by individual community members are not created on purpose.
 
