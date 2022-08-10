@@ -42,9 +42,10 @@ Inside that folder you'll find all your archival files. Folders already found wi
 ## Configuration
 **This `README.md` itself is the configuration file for the scripts.**
 
-To NOT scrape certain GitHub authors/repos, Youtube channels, or Libera channels, simply remove the line from the `README.md` lists before running the script. No empty line can be left behind, make sure you delete the whole line.
+To REMOVE things, simply remove that line in the list in `README.md` before running the script. Make sure you delete the whole line, no empty spaces.
 
-To add your own GitHub authors/repos, please follow this syntax:
+To ADD things, edit the `README.md` and follow this syntax:
+GitHub:
 ```
 * AUTHOR
     - REPO
@@ -52,33 +53,40 @@ To add your own GitHub authors/repos, please follow this syntax:
     - REPO
     - REPO
 ```
-To add Youtube channels:
+Youtube:
 ```
-* NAME_WITH_NO_SPACE https://youtube.com/c/YOUTUBE_CHANNEL
+* NAME_WITHOUT_SPACES https://youtube.com/YOUTUBE_CHANNEL_OR_VIDEO_LINK
 ```
 The 1st argument is the name with no spaces, the 2nd is the Youtube link.
 
-At the end of every list (GitHub, etc) there must be an empty line:
+### Caution
+At the end of every list (GitHub, etc) make sure there is an empty line:
 ```
 ## LIST
 * AUTHOR
     - REPO
-                    <-- this empty line needs to be here
+                <-- this empty line needs to be here
 ## LIST
 * CHANNEL
 ```
 
 ## Requirements
-| Script         | Required             | Optional          | Debian/Ubuntu Package        | Arch Linux Package                     |
-|----------------|----------------------|-------------------|------------------------------|----------------------------------------|
-| github.sh      | `git`                |                   | `git`                        | `git`                                  |
-| youtube.sh     | `git` & `youtube-dl` | `yt-dlp`, `aria2` | `git`, `youtube-dl`, `aria2` | `git`, `youtube-dl`, `yt-dlp`, `aria2` |
-| libera_logs.sh | `git` & `wget`       | `curl`            | `git`, `wget`, `curl`        | `git`, `wget`, `curl`                  |
+| Script         | Required         | Optional      | Debian/Ubuntu Package  | Arch Linux Package             |
+|----------------|------------------|---------------|------------------------|--------------------------------|
+| github.sh      | git              |               | git                    | git                            |
+| youtube.sh     | git & youtube-dl | yt-dlp, aria2 | git, youtube-dl, aria2 | git, youtube-dl, yt-dlp, aria2 |
+| libera_logs.sh | git & wget       | curl          | git, wget, curl        | git, wget, curl                |
+
 **As long as you have the packages in `Required`, the scripts will work.**
 
-`youtube.sh` will use `yt-dlp` by default, and `youtube-dl` as a fallback. Having [`aria2`](https://github.com/aria2/aria2) make downloads much faster and the video quality better, but it is optional. If you're using a Debian-based distro, `yt-dlp` can be installed through PIP: `python3 -m pip install -U yt-dlp`. [See more info here about yt-dlp here.](https://github.com/yt-dlp) [`Aria2`](https://github.com/aria2/aria2) is available in Debian/Ubuntu/Arch as the package: `aria2`
+---
 
-`libera_logs.sh` will use `wget` by default and `curl` as a fallback.
+***youtube.sh*** will use `yt-dlp` by default, and `youtube-dl` as a fallback. Having [`aria2`](https://github.com/aria2/aria2) make downloads much faster and the video quality better, but it is optional.
+
+If you're using a Debian-based distro, `yt-dlp` can be installed through PIP: `python3 -m pip install -U yt-dlp`  
+[See more info here about yt-dlp here.](https://github.com/yt-dlp)
+
+***libera_logs.sh*** will use `wget` by default and `curl` as a fallback.
 
 `git` is needed in all scripts.
 
